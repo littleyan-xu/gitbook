@@ -1,0 +1,750 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7. Vue.js实现 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="8.html" />
+    
+    
+    <link rel="prev" href="6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" >
+            
+                <span>
+            
+                    
+                    Vue响应式系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1. 一个简单的开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2. 封装Dep类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    3. 封装Watcher类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    4. observer转化getter/setter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    5. 封装Observer类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.6" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    6. 数组响应式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.1.7" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    7. Vue.js实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.8" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    8. Proxy小试牛刀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.9" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    9. Vue3响应式系统之变化侦测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.10" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    10. Vue3响应式系统之依赖收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" >
+            
+                <span>
+            
+                    
+                    虚拟DOM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../vdom/1.html">
+            
+                <a href="../vdom/1.html">
+            
+                    
+                    1. 实现虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../vdom/2.html">
+            
+                <a href="../vdom/2.html">
+            
+                    
+                    2. Patch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >7. Vue.js实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vuejs&#x5B9E;&#x73B0;">Vue.js&#x5B9E;&#x73B0;</h1>
+<p>&#x4EE5;&#x4E0A;&#x662F;&#x6211;&#x4E2A;&#x4EBA;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;Vue2&#x6E90;&#x7801;&#x91CC;&#x9762;==&#x7ED1;&#x5B9A;&#x4F9D;&#x8D56;==&#x8FD9;&#x5757;&#x5B9E;&#x73B0;&#x7684;&#x66F4;&#x7075;&#x6D3B;&#x66F4;&#x4F18;&#x96C5;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x6E90;&#x7801;&#x91CC;&#x9762;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<pre><code>// &#x5DE5;&#x5177;&#x51FD;&#x6570;&#xFF1A;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x5BF9;&#x8C61;
+function isObject(obj) {
+    return obj !== null &amp;&amp; typeof obj === &apos;object&apos;
+}
+
+// &#x5DE5;&#x5177;&#x51FD;&#x6570;&#xFF1A;&#x901A;&#x8FC7;Object.defineProperty&#x7ED9;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;
+function def(obj, key, val, enumerable) {
+    Object.defineProperty(obj, key, {
+        value: val,
+        enumerable: !!enumerable,
+        writable: true,
+        configurable: true
+    })
+}
+
+// &#x5DE5;&#x5177;&#x51FD;&#x6570;&#xFF1A;&#x5BF9;&#x8C61;&#x662F;&#x662F;&#x5426;&#x6709;&#x67D0;&#x4E2A;&#x975E;&#x7EE7;&#x627F;&#x7684;key
+function hasOwnKey(target, key) {
+    return target.hasOwnProperty(key)
+}
+
+class Dep {
+    // static target = null
+
+    constructor() {
+        this.subscribers = []
+    }
+
+    addSub(sub) {
+        this.subscribers.push(sub)
+    }
+
+    depend() {
+        if (Dep.target) {
+            Dep.target.addDep(this)
+        }
+    }
+
+    notify() {
+        this.subscribers.forEach(sub =&gt; {
+            sub.update()
+        })
+    }
+}
+Dep.target = null //&#x9759;&#x6001;&#x5C5E;&#x6027;
+
+class Watcher {
+    constructor(func) {
+        this.getter = func
+        this.value = this.get()
+    }
+
+    get() {
+        Dep.target = this;
+        this.getter() // &#x89E6;&#x53D1;getter&#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#xFF0C;&#x56E0;&#x4E3A;target&#x5DF2;&#x5B58;&#x5728;
+        Dep.target = null
+    }
+
+    addDep(dep) {
+        dep.addSub(this)
+    }
+
+    update() {
+        this.getter() // &#x6A21;&#x62DF;&#x89C6;&#x56FE;&#x66F4;&#x65B0;
+    }
+}
+
+//&#x5904;&#x7406;&#x6570;&#x7EC4;&#x7684;&#x54CD;&#x5E94;
+let arrayProto = Array.prototype
+let arrayMethods = Object.create(arrayProto);
+
+[&apos;push&apos;, &apos;pop&apos;, &apos;shift&apos;, &apos;unshift&apos;, &apos;splice&apos;, &apos;sort&apos;, &apos;reverse&apos;].forEach((method) =&gt; {
+    const original = arrayProto[method]
+
+    // &#x5B98;&#x65B9;&#x7528;&#x7684;&#x662F;def&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x53BB;&#x5B9A;&#x4E49;
+    arrayMethods[method] = function (...args) {
+        const result = original.apply(this, args) // &#x8C03;&#x7528;&#x539F;&#x5148;&#x7684;&#x65B9;&#x6CD5;
+
+        let inserted
+        const ob = this.__ob__ // &#x5728;Observer&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;
+
+        switch (method) {
+            case &apos;push&apos;:
+            case &apos;unshift&apos;:
+                inserted = args
+                break;
+            case &apos;splice&apos;:
+                inserted = args.slice(2)
+                break;
+        }
+        if (inserted) ob.observeArray(args) // &#x65B0;&#x589E;&#x7684;&#x6570;&#x636E;&#x4E5F;&#x8981;&#x4FA6;&#x6D4B;&#x6BCF;&#x4E00;&#x9879;
+
+        ob.dep.notify() // &#x89E6;&#x53D1;&#x66F4;&#x65B0;
+        return result
+    }
+})
+
+/**
+ * Observer&#x7C7B;&#x4F1A;&#x9644;&#x4EF6;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x88AB;&#x4FA6;&#x6D4B;&#x7684;object&#x4E0A;&#x3002;
+ * &#x4E00;&#x65E6;&#x88AB;&#x9644;&#x4EF6;&#xFF0C;Observer&#x4F1A;&#x5C06;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x8F6C;&#x6362;&#x4E3A;getter/setters
+ * &#x6765;&#x641C;&#x96C6;&#x4F9D;&#x8D56;&#x548C;&#x89E6;&#x53D1;&#x66F4;&#x65B0;
+ * --&#x6765;&#x81EA;&#x5B98;&#x65B9;&#x6E90;&#x7801;&#x7684;&#x6CE8;&#x91CA;
+ */
+class Observer {
+    constructor(value) {
+        this.value = value
+        this.dep = new Dep()
+
+        // &#x5C06;__ob__&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x4E0A;&#xFF0C;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x6570;&#x636E;&#x662F;&#x5426;&#x5DF2;&#x8F6C;&#x6362;&#x4E3A;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x548C;&#x6570;&#x7EC4;&#x89E6;&#x53D1;&#x66F4;&#x65B0;
+        def(value, &apos;__ob__&apos;, this)
+
+        if (Array.isArray(value)) {
+            value.__proto__ = arrayMethods
+            // Object.setPrototypeOf(value, arrayMethods) es6API
+
+            this.observeArray(value)
+        } else {
+            this.walk(value)
+        }
+    }
+
+    walk(obj) {
+        Object.keys(obj).forEach(key =&gt; {
+            defineReactive(obj, key, obj[key])
+        });
+    }
+
+    // &#x4FA6;&#x6D4B;&#x6570;&#x7EC4;&#x7684;&#x6BCF;&#x4E00;&#x9879;
+    observeArray(items) {
+        for (let i = 0, l = items.length; i &lt; l; i++) {
+            observe(items[i])
+        }
+    }
+}
+
+function observe(value) {
+    if (!isObject(value)) return
+    let ob
+    if (hasOwnKey(value, &apos;__ob__&apos;)) { // &#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;
+        ob = value.__ob__
+    } else {
+        ob = new Observer(value)
+    }
+    return ob
+}
+
+function defineReactive(obj, key, value) {
+    let childOb = observe(value) // &#x9012;&#x5F52;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B50;&#x5BF9;&#x8C61;&#x6240;&#x5BF9;&#x5E94;&#x7684;Observer&#x5B9E;&#x4F8B;
+
+    let dep = new Dep()
+
+    Object.defineProperty(obj, key, {
+        configurable: true,
+        enumerable: true,
+        get: function () {
+            if (Dep.target) {
+                dep.depend() // &#x641C;&#x96C6;&#x4F9D;&#x8D56;
+
+                if (childOb) {
+                    childOb.dep.depend()
+                }
+            }
+            return value
+        },
+        set: function (newval) {
+            if (newval !== value) {
+                observe(newval) // &#x65B0;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x5BF9;&#x8C61;
+                value = newval
+                dep.notify() // &#x89E6;&#x53D1;&#x66F4;&#x65B0;
+            }
+        }
+    })
+}
+
+class Vue {
+    constructor(data) {
+        new Observer(data)
+
+        // &#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x591A;&#x4E2A;watcher&#x5B9E;&#x4F8B;
+        new Watcher(render) // &#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x4E3A;&#x4F9D;&#x8D56;
+        new Watcher(sum) //&#x8FD9;&#x91CC;&#x6A21;&#x62DF;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;computed&#xFF08;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF09;&#x6216;&#x8005; watch &#x4E5F;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x4E3A;&#x4F9D;&#x8D56;
+    }
+}
+
+let data = {
+    price: 10,
+    count: 2,
+    list: []
+}
+
+function render() {
+    let total = data.price * data.count // &#x89E6;&#x53D1;getter
+    console.log(&apos;total:&apos;, total)
+}
+
+function sum() {
+    let sum = 0
+    data.list.forEach(item =&gt; sum += item) // &#x89E6;&#x53D1;getter
+    console.log(&apos;sum:&apos;, sum)
+}
+
+new Vue(data) // &#x6A21;&#x62DF;Vue&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x5165;&#x53E3;
+
+data.price = 20 // &#x89E6;&#x53D1;&#x66F4;&#x65B0;
+
+data.list.push(1, 2, 3) // &#x89E6;&#x53D1;&#x66F4;&#x65B0;
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x6709;3&#x5904;&#x91CD;&#x70B9;&#xFF1A;</p>
+<p>1&#x3001;&#x5C06;&#x4F9D;&#x8D56;dep&#x7ED1;&#x5B9A;&#x5230;Observer&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#x4E0A;&#xFF0C;&#x5E76;&#x5C06;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x7ED1;&#x5B9A;&#x5230;value&#x503C;&#x7684;<strong>ob</strong>&#x5C5E;&#x6027;&#x4E0A;</p>
+<pre><code>class Observer {
+    constructor(value) {
+        this.dep = new Dep()
+
+        // &#x5C06;__ob__&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x4E0A;&#xFF0C;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x6570;&#x636E;&#x662F;&#x5426;&#x5DF2;&#x8F6C;&#x6362;&#x4E3A;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x548C;&#x6570;&#x7EC4;&#x89E6;&#x53D1;&#x66F4;&#x65B0;
+        def(value, &apos;__ob__&apos;, this)
+    }
+}
+</code></pre><p>&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x76F4;&#x63A5;&#x5C06;dep&#x7ED1;&#x5B9A;&#x5230;vulue&#x4E0A;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5C06;dep&#x7ED1;&#x5B9A;&#x5F53;&#x524D;Observer&#x5B9E;&#x4F8B;&#x4E0A;&#xFF0C;&#x800C;&#x628A;&#x5B9E;&#x4F8B;&#x53C8;&#x7ED1;&#x5B9A;&#x5230;vulue&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#x597D;&#x5904;&#x591A;&#x591A;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5171;&#x4EAB;Observer&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;observeArray&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x62E6;&#x622A;&#x5668;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5C06;&#x6B64;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x4E3A;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#xFF1B;&#x5176;&#x6B21;&#xFF0C;&#x901A;&#x8FC7;<strong>ob</strong>&#x5C5E;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x5F53;&#x524D;value&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x8F6C;&#x6362;&#x4E3A;&#x54CD;&#x5E94;&#x5F0F;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x66F4;&#x7075;&#x6D3B;&#xFF0C;&#x4E5F;&#x66F4;&#x5BB9;&#x6613;&#x6269;&#x5C55;&#x3002;</p>
+<p>2&#x3001;&#x5728;&#x4F9D;&#x8D56;&#x641C;&#x96C6;&#x65F6;&#xFF0C;&#x5C06;&#x4E0A;&#x9762;value&#x503C;&#x6240;&#x5BF9;&#x5E94;&#x7684;dep&#x4E5F;&#x641C;&#x96C6;&#x4E3A;&#x4F9D;&#x8D56;</p>
+<pre><code>function defineReactive(obj, key, value) {
+    let childOb = observe(value) // &#x9012;&#x5F52;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B50;&#x5BF9;&#x8C61;&#x6240;&#x5BF9;&#x5E94;&#x7684;Observer&#x5B9E;&#x4F8B;
+    ...
+    Object.defineProperty(obj, key, {
+        ...
+        get: function () {
+            if (Dep.target) {
+                dep.depend() // &#x641C;&#x96C6;&#x4F9D;&#x8D56;
+
+                if (childOb) {
+                    childOb.dep.depend()
+                }
+            }
+            return value
+        },
+        set: function (newval) {
+            ...
+        }
+    })
+}
+
+function observe(value) {
+    if (!isObject(value)) return
+    let ob
+    if (hasOwnKey(value, &apos;__ob__&apos;)) { // &#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;
+        ob = value.__ob__
+    } else {
+        ob = new Observer(value)
+    }
+    return ob
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x5728;&#x5B9E;&#x4F8B;&#x4E0A;&#x6DFB;&#x52A0;&#x4E86;dep&#x4F9D;&#x8D56;&#xFF0C;&#x5728;getter&#x91CC;&#x6536;&#x96C6;&#x8FD9;&#x4E2A;&#x4F9D;&#x8D56;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x62E6;&#x622A;&#x5668;&#x91CC;&#x9762;&#x53BB;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#x65F6;&#x624D;&#x4F1A;&#x751F;&#x6548;&#xFF0C;childOb.dep.depend()&#x5C31;&#x662F;&#x4E3A;&#x6570;&#x7EC4;&#x800C;&#x751F;&#x7684;&#xFF01;</p>
+<p>3&#x3001;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x5F53;&#x524D;&#x503C;value&#x503C;&#x7684;<strong>ob</strong>&#x5C5E;&#x6027;&#x627E;&#x5230;&#x6240;&#x5BF9;&#x5E94;&#x7684;Observer&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x627E;&#x5230;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;dep&#x6765;&#x66F4;&#x65B0;</p>
+<pre><code>arrayMethods[method] = function (...args) {
+    ...
+    const ob = this.__ob__ // &#x5728;Observer&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;
+
+    ob.dep.notify() // &#x89E6;&#x53D1;&#x66F4;&#x65B0;
+    ...
+}
+</code></pre><p>&#x55EF;&#xFF0C;&#x4E0A;&#x9762;&#x505A;&#x4E86;&#x90A3;&#x4E48;&#x591A;&#x94FA;&#x57AB;&#xFF0C;&#x5C31;&#x4E3A;&#x4E86;&#x8FD9;&#x4E00;&#x523B;&#xFF0C;&#x7EC8;&#x4E8E;&#x5927;&#x529F;&#x544A;&#x6210;&#xFF01;</p>
+<p>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x6709;&#x63D0;&#x5230;&#x4E3A;&#x4EC0;&#x4E48;&#x4E00;&#x5B9A;&#x8981;&#x5B9A;&#x4E49;Observer&#x7C7B;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;Dep&#x7C7B;&#x5B9E;&#x4F8B;&#x4E0E;Observer&#x7C7B;&#x5B9E;&#x4F8B;&#x7D27;&#x5BC6;&#x7ED3;&#x5408;&#xFF0C;&#x7075;&#x6D3B;&#x8FD0;&#x7528;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x6613;&#x6269;&#x5C55;&#xFF0C;&#x4E5F;&#x66F4;&#x4F18;&#x96C5;&#x3002;</p>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x4E00;&#x4E2A;&#x8F83;&#x4E3A;&#x5B8C;&#x6574;&#x54CD;&#x5E94;&#x5F0F;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x8F83;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x771F;&#x5B9E;&#x7684;vue.js&#x6E90;&#x7801;&#x91CC;&#x9762;&#x8FDC;&#x6BD4;&#x8FD9;&#x590D;&#x6742;&#xFF0C;&#x8003;&#x8651;&#x7684;&#x95EE;&#x9898;&#x66F4;&#x591A;&#xFF0C;&#x4EE3;&#x7801;&#x66F4;&#x5065;&#x58EE;&#xFF0C;&#x4F46;&#x662F;&#x4E07;&#x53D8;&#x4E0D;&#x79BB;&#x5176;&#x5B97;&#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x8FD8;&#x662F;&#x5B66;&#x4E60;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x601D;&#x8DEF;&#x3002;</p>
+<p>&#x5728;&#x6B64;&#x987A;&#x4FBF;&#x9644;&#x4E0A;vue&#x5B98;&#x7F51;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x67B6;&#x6784;&#x56FE;&#xFF0C;&#x5BF9;&#x5E94;Vue&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x7CFB;&#x7EDF;&#x66F4;&#x52A0;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#xFF1A;
+<img src="https://cn.vuejs.org/images/data.png" alt="image"></p>
+<p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x867D;&#x7136;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x603B;&#x6709;&#x4E9B;&#x4E0D;&#x5B8C;&#x7F8E;&#xFF1A;1&#x3001;&#x53EA;&#x80FD;&#x4FA6;&#x6D4B;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x5BF9;&#x4E8E;&#x6DFB;&#x52A0;/&#x5220;&#x9664;&#x5C5E;&#x6027;&#x65E0;&#x6CD5;&#x76D1;&#x6D4B;&#xFF0C;&#x6570;&#x7EC4;length&#x6539;&#x53D8;&#x6216;&#x67D0;&#x4E00;&#x9879;&#x503C;&#x7684;&#x6539;&#x53D8;&#x4E5F;&#x65E0;&#x6CD5;&#x4FA6;&#x6D4B;&#xFF1B;2&#x3001;&#x5728;&#x5C06;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x8F6C;&#x6362;&#x4E3A;getter/setter&#x65F6;&#x8FDB;&#x884C;&#x4E86;&#x904D;&#x5386;&#x548C;&#x9012;&#x5F52;&#xFF0C;&#x5982;&#x679C;&#x5D4C;&#x5957;&#x7684;&#x5F88;&#x6DF1;&#xFF0C;&#x5219;&#x4F1A;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x95EE;&#x9898;1&#xFF0C;Vue&#x6DFB;&#x52A0;&#x4E86;set&#x548C;delete&#x65B9;&#x6CD5;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#x7684;&#x5F71;&#x54CD;&#x5F0F;&#xFF1A;</p>
+<pre><code>function set(target, key, val) {
+    // ...
+    // &#x524D;&#x9762;&#x4F1A;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x68C0;&#x67E5;&#x5224;&#x65AD;
+    // ...
+
+  const ob = target.__ob__ // __ob__&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;Observer&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#xFF0C;
+
+  if (!ob) {
+    target[key] = val
+    return val
+  }
+
+  defineReactive(ob.value, key, val) // &#x5C06;&#x4F20;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;getter/setter&#x4ECE;&#x800C;&#x6DFB;&#x52A0;&#x5230;&#x54CD;&#x5E94;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;
+  ob.dep.notify() // &#x89E6;&#x53D1;&#x66F4;&#x65B0;
+  return val
+}
+
+
+function del(target, key) {
+    // ...
+    // &#x524D;&#x9762;&#x4F1A;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x68C0;&#x67E5;&#x5224;&#x65AD;
+    // ...
+
+  const ob = target.__ob__ // __ob__&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;Observer&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#xFF0C;
+
+  if (!hasOwn(target, key)) {
+    return
+  }
+  delete target[key]
+  if (!ob) {
+    return
+  }
+  ob.dep.notify()
+}
+</code></pre><p>&#x5BF9;&#x4E8E;&#x95EE;&#x9898;2&#xFF0C;ES5&#x4F3C;&#x4E4E;&#x6CA1;&#x6709;&#x5B8C;&#x7F8E;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;&#x800C;&#x4F7F;&#x7528; ES6&#x7684;Proxy&#x5219;&#x5B8C;&#x7F8E;&#x89E3;&#x51B3;&#x4E86;&#x4EE5;&#x4E0A;2&#x4E2A;&#x95EE;&#x9898;&#xFF0C;Proxy&#x4EE3;&#x7406;&#x662F;&#x9488;&#x5BF9;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EA;&#x8981;&#x4EE3;&#x7406;&#x4E86;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x540C;&#x7EA7;&#x7ED3;&#x6784;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5305;&#x62EC;&#x6DFB;&#x52A0;/&#x5220;&#x9664;&#x65B0;&#x5C5E;&#x6027;&#xFF0C;&#x5F53;&#x7136;&#x5BF9;&#x4E8E;&#x6DF1;&#x5C42;&#x7ED3;&#x6784;&#xFF0C;&#x9012;&#x5F52;&#x5728;&#x6240;&#x96BE;&#x514D;&#xFF0C;&#x53E6;&#x5916;Proxy&#x4E5F;&#x5B8C;&#x7F8E;&#x652F;&#x6301;&#x4EE3;&#x7406;&#x6570;&#x7EC4;&#xFF0C;&#x751A;&#x81F3;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x62FF;Proxy&#x6765;&#x5C0F;&#x8BD5;&#x725B;&#x5200;&#xFF1A;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6.html" class="navigation navigation-prev " aria-label="Previous page: 6. 数组响应式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="8.html" class="navigation navigation-next " aria-label="Next page: 8. Proxy小试牛刀">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7. Vue.js实现","level":"2.1.1.7","depth":3,"next":{"title":"8. Proxy小试牛刀","level":"2.1.1.8","depth":3,"path":"vue/observer/8.md","ref":"vue/observer/8.md","articles":[]},"previous":{"title":"6. 数组响应式","level":"2.1.1.6","depth":3,"path":"vue/observer/6.md","ref":"vue/observer/6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/observer/7.md","mtime":"2020-01-14T07:25:47.584Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T08:05:27.728Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
