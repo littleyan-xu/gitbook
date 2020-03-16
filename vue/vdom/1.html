@@ -366,7 +366,160 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5B9E;&#x73B0;&#x865A;&#x62DF;dom">&#x5B9E;&#x73B0;&#x865A;&#x62DF;DOM</h1>
-<p>TODO</p>
+<h4 id="&#x4E00;&#x3001;&#x6211;&#x5BF9;&#x865A;&#x62DF;dom&#x7684;&#x51E0;&#x70B9;&#x7406;&#x89E3;&#xFF1A;">&#x4E00;&#x3001;&#x6211;&#x5BF9;&#x865A;&#x62DF;DOM&#x7684;&#x51E0;&#x70B9;&#x7406;&#x89E3;&#xFF1A;</h4>
+<ol>
+<li><p>&#x865A;&#x62DF;DOM&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;js&#x5BF9;&#x8C61;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x8282;&#x70B9;&#x63CF;&#x8FF0;&#x5BF9;&#x8C61;&#xFF0C;&#x6765;&#x63CF;&#x8FF0;&#x548C;&#x6620;&#x5C04;&#x771F;&#x5B9E;&#x7684;DOM</p>
+<pre><code>VNode 
+{
+ tag: &quot;div&quot;, 
+ elm: div#app,
+ tag: &quot;div&quot;
+ data: {attrs: {&#x2026;}}
+ children: (3) [VNode, VNode, VNode]
+ text: undefined
+ elm: div#app
+ ...
+}
+</code></pre></li>
+<li><p>&#x5728;vue&#x4E2D;&#xFF0C;&#x865A;&#x62DF;DOM&#x5E76;&#x4E0D;&#x662F;&#x5FC5;&#x9700;&#x7684;&#xFF0C;vue&#x7684;&#x53D8;&#x5316;&#x4FA6;&#x6D4B;&#x673A;&#x5236;&#x4F7F;&#x5B83;&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x7684;&#x77E5;&#x6653;&#x54EA;&#x4E9B;&#x8282;&#x70B9;&#x4F7F;&#x7528;&#x4E86;&#x72B6;&#x6001;&#xFF0C;&#x901A;&#x8FC7;&#x7EC6;&#x817B;&#x5EA6;&#x7684;&#x7ED1;&#x5B9A;&#x6765;&#x66F4;&#x65B0;&#x89C6;&#x56FE;&#xFF0C;vue.js 1.0&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x4EE3;&#x4EF7;&#xFF0C;&#x7C92;&#x5EA6;&#x592A;&#x7EC6;&#xFF0C;watcher&#x6570;&#x91CF;&#x591A;&#xFF0C;&#x591A;&#x4E2A;watcher&#x540C;&#x65F6;&#x89C2;&#x5BDF;&#x67D0;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x5F00;&#x9500;&#x548C;&#x4F9D;&#x8D56;&#x8FFD;&#x8E2A;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x5F53;&#x72B6;&#x6001;&#x88AB;&#x8D8A;&#x591A;&#x8282;&#x70B9;&#x4F7F;&#x7528;&#xFF0C;&#x5F00;&#x9500;&#x5C31;&#x8D8A;&#x5927;&#x3002;</p>
+</li>
+<li>vue2.0&#x4F7F;&#x7528;&#x4E86;&#x865A;&#x62DF;DOM&#xFF0C;&#x91C7;&#x7528;&#x4E86;&#x4E2D;&#x7B49;&#x7C92;&#x5EA6;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x72B6;&#x6001;&#x4FA6;&#x6D4B;&#x4E0D;&#x518D;&#x7EC6;&#x5316;&#x5230;&#x5177;&#x4F53;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x800C;&#x662F;&#x7EC4;&#x4EF6;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x7EC4;&#x4EF6;&#x7684;patch&#x6765;&#x66F4;&#x65B0;&#x89C6;&#x6765;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x3002;</li>
+<li><p>&#x865A;&#x62DF;dom&#x7684;diff&#xFF08;&#x6216;&#x8005;&#x53EB;patch&#xFF09;&#xFF0C;&#x662F;&#x5C06;&#x5927;&#x91CF;&#x7684;dom&#x64CD;&#x4F5C;&#x8F6C;&#x79FB;&#x5230;js&#x8FD0;&#x7B97;&#xFF0C;&#x56E0;&#x4E3A;Dom&#x7684;&#x64CD;&#x4F5C;&#x7684;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x8FDC;&#x4E0D;&#x5982;js&#x8FD0;&#x7B97;&#x901F;&#x5EA6;&#x5FEB;&#x3002;DOM&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x67E5;&#x8BE2;&#x548C;&#x521B;&#x5EFA;&#x662F;&#x975E;&#x5E38;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#x7684;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x7684;div&#xFF0C;&#x5176;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#x5C31;&#x8FBE;&#x5230;251&#x4E2A;&#x3002;</p>
+<pre><code>let div = document.createElement(&apos;div&apos;);
+let count = 0;
+for (let p in div) {
+count++;
+}
+console.log(count); // ==&gt; 251 from chrome79
+</code></pre></li>
+<li><p>&#x5BF9;&#x4E8E;&#x5728;vue&#x4E2D;&#x4F7F;&#x7528;&#x865A;&#x62DF;DOM&#xFF0C;&#x9664;&#x5F00;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x57FA;&#x4E8E;&#x865A;&#x62DF;DOM&#x5B9E;&#x73B0;&#x5938;&#x5E73;&#x53F0;&#xFF0C;&#x4F7F;&#x5F97;&#x6709;&#x4E86;DOM&#x4EE5;&#x5916;&#x7684;&#x6E32;&#x67D3;&#x80FD;&#x529B;&#x3002;</p>
+</li>
+</ol>
+<h4 id="&#x4E8C;&#x3001;vdom&#x5B9E;&#x73B0;">&#x4E8C;&#x3001;Vdom&#x5B9E;&#x73B0;</h4>
+<p>&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x8BF4;&#x5230;&#xFF0C;Vdom&#x672C;&#x8D28;&#x5C31;&#x662F;js&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x8C61;&#x6709;&#x4E00;&#x7CFB;&#x5217;&#x5C5E;&#x6027;&#xFF0C;&#x5982;tag&#xFF0C;data&#xFF0C;children&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x771F;&#x5B9E;DOM&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;vue&#x4E2D;&#x7528;&#x4E00;&#x4E2A;Vnode&#x7C7B;&#x6765;&#x5B9E;&#x73B0;:</p>
+<pre><code>class Vnode {
+  constructor(tag, data, children, text, key) {
+    this.tag = tag
+    this.data = data
+    this.children = children
+    this.text = text
+    this.key = key
+  }
+}
+</code></pre><p>&#x865A;&#x62DF;DOM&#x6700;&#x7EC8;&#x90FD;&#x8981;&#x751F;&#x6210;&#x771F;&#x5B9E;DOM&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x4E2D;&#xFF1A;</p>
+<p>HTML&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+</code></pre><p>JS&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>class Vnode {
+  constructor(tag, data, children, text, key) {
+    this.tag = tag
+    this.data = data
+    this.children = children
+    this.text = text
+    this.key = key
+  }
+}
+
+// &#x751F;&#x6210;&#x865A;&#x62DF;DOM
+function createElement(tag, data, children, text, key) {
+  return new Vnode(tag, data, children, text, key)
+}
+
+// &#x751F;&#x6210;&#x771F;&#x5B9E;DOM
+function createElm(vnode, parentElm, refElm) {
+  const data = vnode.data
+  const children = vnode.children
+  const tag = vnode.tag
+  const text = vnode.text
+
+  // &#x5982;&#x679C;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9;
+  if(tag){
+    vnode.elm = document.createElement(vnode.tag) // &#x521B;&#x5EFA;&#x5143;&#x7D20;
+
+    // &#x521B;&#x5EFA;&#x5B50;&#x5143;&#x7D20;
+    if(Array.isArray(children)){
+      for (let i = 0; i &lt; children.length; ++i) {
+        createElm(children[i], vnode.elm, null) // &#x9012;&#x5F52;
+      }
+    }
+    else if(text){ // &#x5982;&#x679C;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x6587;&#x672C;&#x5143;&#x7D20;&#x5219;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x6587;&#x672C;&#x8282;&#x70B9;
+      vnode.elm.appendChild(document.createTextNode(text))
+    }
+
+    // &#x5904;&#x7406;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5982;className
+    let attrs = Object.keys(data)
+    attrs.forEach((key) =&gt; {
+      vnode.elm.setAttribute(key, data[key])
+    })
+
+    // &#x6700;&#x540E;&#x63D2;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;
+    insert(parentElm, vnode.elm, refElm)
+  }
+  else if(text){ // &#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;
+    vnode.elm = document.createTextNode(text) // &#x521B;&#x5EFA;&#x6587;&#x672C;&#x8282;&#x70B9;
+    insert(parentElm, vnode.elm, refElm) // &#x5C06;&#x6587;&#x672C;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;
+  }
+}
+
+// &#x5C06;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;
+function insert (parent, elm, ref) {
+  if (parent) {
+    if (ref) {
+      if (ref.parentNode === parent) {
+        parent.insertBefore(elm, ref);
+      }
+    } else {
+      parent.appendChild(elm)
+    }
+  }
+}
+
+var vnode = null
+function init() {
+  vnode = createElement(&apos;ul&apos;, {
+    id: &apos;list&apos;,
+    class: &apos;list&apos;,
+  }, [
+    createElement(&apos;li&apos;, { class: &apos;item1&apos; }, null, &apos;a&apos;, &apos;key1&apos;),
+    createElement(&apos;li&apos;, { class: &apos;item2&apos; }, null, &apos;b&apos;, &apos;key2&apos;),
+    createElement(&apos;li&apos;, { class: &apos;item3&apos; }, null, &apos;c&apos;, &apos;key3&apos;)
+  ])
+  console.log(vnode);
+
+  // &#x6839;&#x8282;&#x70B9;&#xFF0C;Html&#x4E2D;&#x9700;&#x5B58;&#x5728;&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+  const root = document.getElementById(&quot;app&quot;)
+
+  // &#x5C06;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x751F;&#x6210;&#x771F;&#x5B9E;&#x8282;&#x70B9;&#x5E76;&#x63D2;&#x5165;&#x5230;DOM&#x4E2D;
+  createElm(vnode, root) 
+}
+
+init() // &#x5165;&#x53E3;
+</code></pre><p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;
+<img src="https://rhinosystem.bs2dl.yy.com/cont1580629501750483file" alt="image"></p>
+<pre><code>Vnode {tag: &quot;ul&quot;, data: {&#x2026;}, children: Array(3), text: undefined, key: undefined}
+tag: &quot;ul&quot;
+data: {id: &quot;list&quot;, class: &quot;list&quot;}
+children: Array(3)
+0: Vnode {tag: &quot;li&quot;, data: {&#x2026;}, children: null, text: &quot;a&quot;, key: &quot;key1&quot;, &#x2026;}
+1: Vnode {tag: &quot;li&quot;, data: {&#x2026;}, children: null, text: &quot;b&quot;, key: &quot;key2&quot;, &#x2026;}
+2: Vnode {tag: &quot;li&quot;, data: {&#x2026;}, children: null, text: &quot;c&quot;, key: &quot;key3&quot;, &#x2026;}
+length: 3
+__proto__: Array(0)
+text: undefined
+key: undefined
+elm: ul#list.list
+__proto__: Object
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x505A;&#x4E86;2&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<ol>
+<li><p>&#x751F;&#x6210;Vnode&#x5B9E;&#x4F8B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x3002;vue&#x4E2D;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x5206;&#x4E3A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x3001;&#x6587;&#x672C;&#x8282;&#x70B9;&#x3001;&#x6CE8;&#x91CA;&#x8282;&#x70B9;&#x3001;&#x7EC4;&#x4EF6;&#x8282;&#x70B9;&#x3001;&#x51FD;&#x6570;&#x5F0F;&#x8282;&#x70B9;&#x3001;&#x514B;&#x9686;&#x8282;&#x70B9;&#xFF0C;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x53EA;&#x662F;&#x6709;&#x6548;&#x5C5E;&#x6027;&#x503C;&#x4E0D;&#x540C;&#xFF0C;&#x53EA;&#x6709;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x3001;&#x6587;&#x672C;&#x8282;&#x70B9;&#x3001;&#x6CE8;&#x91CA;&#x8282;&#x70B9;&#x624D;&#x9700;&#x8981;&#x63D2;&#x5165;&#x771F;&#x5B9E;DOM&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x5904;&#x7406;&#x4E86;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x548C;&#x6587;&#x672C;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li><p>&#x5C06;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x9012;&#x5F52;&#x751F;&#x6210;&#x771F;&#x5B9E;&#x8282;&#x70B9;&#xFF0C;&#x63D2;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x51E0;&#x4E2A;&#x5C0F;&#x7EC6;&#x8282;&#xFF1A;</p>
+</li>
+</ol>
+<p>&#xFF08;1&#xFF09;vue&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x771F;&#x5B9E;DOM&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x63D2;&#x5165;&#x5220;&#x9664;&#x7B49;&#x90FD;&#x5C01;&#x88C5;&#x5230;&#x4E86;nodeOps&#x91CC;&#x9762;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x5938;&#x5E73;&#x53F0;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;vue&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x5982;&#x679C;id&#xFF0C;class,style&#xFF09;&#x3001;&#x4E8B;&#x4EF6;&#x3001;&#x6307;&#x4EE4;&#x7B49;&#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x88C5;&#xFF0C;&#x4E3A;&#x4E86;&#x5938;&#x5E73;&#x53F0;&#x548C;&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;&#x5206;&#x95E8;&#x522B;&#x7C7B;&#x7684;&#x5904;&#x7406;&#xFF1A;updateAttrs&#x3001;updateClass&#x3001;updateDOMListeners&#x3001;updateDOMProps&#x3001;updateStyle&#x3001;updateDirectives&#xFF0C;&#x800C;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;setAttribute&#x6765;&#x6F14;&#x793A;&#x3002;</p>
+<p>&#xFF08;3&#xFF09;vue&#x4E2D;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x6765;&#x63CF;&#x8FF0;&#x72B6;&#x6001;&#x548C;DOM&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x800C;&#x6A21;&#x677F;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;&#x6210;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF08;render&#xFF09;&#xFF0C;&#x6267;&#x884C;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7701;&#x7565;&#x4E86;&#x8FD9;&#x4E9B;&#x6B65;&#x9AA4;&#xFF0C;&#x76F4;&#x63A5;&#x4F20;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x6811;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6700;&#x666E;&#x901A;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x865A;&#x62DF;DOM&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x865A;&#x62DF;DOM&#x5E76;&#x4E0D;&#x662F;&#x4EC0;&#x4E48;&#x795E;&#x5947;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5B9E;&#x73B0;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x901A;&#x8FC7;&#x65B0;&#x65E7;&#x865A;&#x62DF;DOM&#x7684;diff&#xFF0C;&#x6765;&#x51CF;&#x5C11;&#x771F;&#x5B9E;DOM&#x7684;&#x64CD;&#x4F5C;&#x624D;&#x662F;&#x91CD;&#x70B9;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5C31;&#x5BF9;vue&#x4E2D;&#x7684;diff &#x7B97;&#x6CD5;&#x6765;&#x4E00;&#x63A2;&#x7A76;&#x7ADF;&#x3002;</p>
 
                                 
                                 </section>
@@ -406,7 +559,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. 实现虚拟DOM","level":"2.1.2.1","depth":3,"next":{"title":"2. Patch","level":"2.1.2.2","depth":3,"path":"vue/vdom/2.md","ref":"vue/vdom/2.md","articles":[]},"previous":{"title":"虚拟DOM","level":"2.1.2","depth":2,"ref":"","articles":[{"title":"1. 实现虚拟DOM","level":"2.1.2.1","depth":3,"path":"vue/vdom/1.md","ref":"vue/vdom/1.md","articles":[]},{"title":"2. Patch","level":"2.1.2.2","depth":3,"path":"vue/vdom/2.md","ref":"vue/vdom/2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/vdom/1.md","mtime":"2020-01-14T07:44:57.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T08:05:27.728Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. 实现虚拟DOM","level":"2.1.2.1","depth":3,"next":{"title":"2. Patch","level":"2.1.2.2","depth":3,"path":"vue/vdom/2.md","ref":"vue/vdom/2.md","articles":[]},"previous":{"title":"虚拟DOM","level":"2.1.2","depth":2,"ref":"","articles":[{"title":"1. 实现虚拟DOM","level":"2.1.2.1","depth":3,"path":"vue/vdom/1.md","ref":"vue/vdom/1.md","articles":[]},{"title":"2. Patch","level":"2.1.2.2","depth":3,"path":"vue/vdom/2.md","ref":"vue/vdom/2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/vdom/1.md","mtime":"2020-03-16T03:39:51.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-16T03:44:38.790Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
