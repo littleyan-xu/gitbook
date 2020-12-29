@@ -8,7 +8,7 @@
 
 ### 使用说明：
 
-1、第一步：在本地创建gitbook init后创建项目，git serve 在本地预览效果，git build 构建一个_book目录
+1、第一步：在本地创建gitbook init后创建项目，gitbook serve 在本地预览效果，gitbook build 构建一个_book目录
 
 2、将_book里面的内容拷贝到github-note目录并提交、推送
 
