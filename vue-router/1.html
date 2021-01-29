@@ -1,0 +1,1240 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>VueRouter核心源码解析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" >
+            
+                <span>
+            
+                    
+                    Vue响应式系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="../vue/observer/1.html">
+            
+                <a href="../vue/observer/1.html">
+            
+                    
+                    1. 一个简单的开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="../vue/observer/2.html">
+            
+                <a href="../vue/observer/2.html">
+            
+                    
+                    2. 封装Dep类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="../vue/observer/3.html">
+            
+                <a href="../vue/observer/3.html">
+            
+                    
+                    3. 封装Watcher类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="../vue/observer/4.html">
+            
+                <a href="../vue/observer/4.html">
+            
+                    
+                    4. observer转化getter/setter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="../vue/observer/5.html">
+            
+                <a href="../vue/observer/5.html">
+            
+                    
+                    5. 封装Observer类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.6" data-path="../vue/observer/6.html">
+            
+                <a href="../vue/observer/6.html">
+            
+                    
+                    6. 数组响应式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.7" data-path="../vue/observer/7.html">
+            
+                <a href="../vue/observer/7.html">
+            
+                    
+                    7. Vue.js实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.8" data-path="../vue/observer/8.html">
+            
+                <a href="../vue/observer/8.html">
+            
+                    
+                    8. Proxy小试牛刀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.9" data-path="../vue/observer/9.html">
+            
+                <a href="../vue/observer/9.html">
+            
+                    
+                    9. Vue3响应式系统之变化侦测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.10" data-path="../vue/observer/10.html">
+            
+                <a href="../vue/observer/10.html">
+            
+                    
+                    10. Vue3响应式系统之依赖收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" >
+            
+                <span>
+            
+                    
+                    虚拟DOM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../vue/vdom/1.html">
+            
+                <a href="../vue/vdom/1.html">
+            
+                    
+                    1. 实现虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../vue/vdom/2.html">
+            
+                <a href="../vue/vdom/2.html">
+            
+                    
+                    2. Patch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" >
+            
+                <span>
+            
+                    
+                    模板解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1" data-path="../vue/parser/1.html">
+            
+                <a href="../vue/parser/1.html">
+            
+                    
+                    1. 生成AST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.2" data-path="../vue/parser/2.html">
+            
+                <a href="../vue/parser/2.html">
+            
+                    
+                    2. 生成Vnode
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    VueRouter
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.2.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    VueRouter核心源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    VueRouter导航守卫
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    微前端
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../microfrontend/1.html">
+            
+                <a href="../microfrontend/1.html">
+            
+                    
+                    微前端源码解析之single-spa篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../microfrontend/2.html">
+            
+                <a href="../microfrontend/2.html">
+            
+                    
+                    微前端源码解析之qiankun篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >VueRouter核心源码解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x641C;&#x7F57;&#x7F51;&#x4E0A;vueRouter&#x6E90;&#x7801;&#x6587;&#x7AE0;&#xFF0C;&#x6BD4;&#x6BD4;&#x7686;&#x662F;&#xFF01;&#x4F46;&#x662F;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x622A;&#x53D6;&#x6E90;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x52A0;&#x4E00;&#x4E9B;&#x6CE8;&#x91CA;&#xFF0C;&#x5199;&#x6587;&#x7AE0;&#x7684;&#x4F5C;&#x8005;&#x5E94;&#x8BE5;&#x786E;&#x5B9E;&#x662F;&#x7406;&#x89E3;&#x4E86;&#xFF0C;&#x4F46;&#x521D;&#x6B21;&#x89E3;&#x8BFB;&#x6E90;&#x7801;&#x7684;&#x8BFB;&#x8005;&#x672A;&#x5FC5;&#x5C31;&#x80FD;&#x7406;&#x89E3;&#xFF0C;&#x6BD5;&#x7ADF;&#x6709;&#x4E9B;&#x5730;&#x65B9;&#x8FD8;&#x662F;&#x633A;&#x7ED5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x629B;&#x5F00;&#x6742;&#x5FF5;&#xFF0C;&#x76F4;&#x62B5;&#x5173;&#x952E;&#x6838;&#x5FC3;&#xFF0C;&#x4EE5;&#x4F7F;&#x7528;&#x4F5C;&#x5165;&#x53E3;&#x9010;&#x6B65;&#x5256;&#x6790;vueRouter&#x6E90;&#x7801;&#x3002;</p>
+<p>&#x67E5;&#x770B;<a href="https://router.vuejs.org/zh/" target="_blank">VueRouter&#x5B98;&#x7F51;</a>&#xFF0C;&#x5176;&#x5305;&#x542B;&#x7684;&#x529F;&#x80FD;&#x8FD8;&#x633A;&#x591A;&#xFF0C;&#x529F;&#x80FD;&#x5217;&#x8868;&#x6709;8&#x6761;&#x4E4B;&#x591A;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x5C31;&#x662F;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x5730;&#x5740;&#xFF0C;&#x6765;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x89C6;&#x56FE;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x6587;&#x5C31;&#x4EE5;&#x8FD9;&#x4E2A;&#x4E3A;&#x76EE;&#x6807;&#xFF0C;&#x6765;&#x5256;&#x6790;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<p>1&#x3001;&#x5F15;&#x5165;VueRouter&#x63D2;&#x4EF6;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x8BE5;&#x63D2;&#x4EF6;&#xFF1A;</p>
+<pre><code>import VueRouter from &apos;@/vue-router&apos;
+
+Vue.use(VueRouter)
+</code></pre><p>2&#x3001;&#x751F;&#x6210;&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x8BE5;&#x914D;&#x7F6E;&#x5B9E;&#x4F8B;&#x5316;VueRouter&#x7C7B;&#xFF1A;</p>
+<pre><code>import Home from &apos;../views/Home.vue&apos;
+import About from &apos;../views/About.vue&apos;
+import A from &apos;../views/A.vue&apos; // &#x8FD9;&#x662F;&#x53EA;&#x662F;&#x793A;&#x610F;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x8BF7;&#x4E0D;&#x8981;&#x8FD9;&#x4E48;&#x968F;&#x610F;
+import B from &apos;../views/B.vue&apos;  // &#x8FD9;&#x662F;&#x53EA;&#x662F;&#x793A;&#x610F;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x8BF7;&#x4E0D;&#x8981;&#x8FD9;&#x4E48;&#x968F;&#x610F;
+
+const routes = [
+  {
+    path: &apos;/&apos;,
+    name: &apos;Home&apos;,
+    component: Home
+  },
+  {
+    path: &apos;/about&apos;,
+    name: &apos;About&apos;,
+    component: About,
+    children:[
+      {
+        path: &apos;a&apos;,
+        component: A
+      },
+      {
+        path: &apos;b&apos;,
+        component: B
+      }
+    ]
+  }
+]
+
+const router = new VueRouter({
+  mode:&apos;hash&apos;,
+  routes
+})
+
+export default router
+</code></pre><p>3&#x3001;&#x5C06;&#x5B9E;&#x4F8B;&#x5316;&#x7684;router&#x6CE8;&#x5165;&#x5230;Vue&#x6839;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre><code>import router from &apos;./router&apos;
+
+new Vue({
+  name: &apos;main&apos;,
+  router,
+  render: h =&gt; h(App)
+}).$mount(&apos;#app&apos;)
+</code></pre><p>4&#x3001;&#x5728;&#x7EC4;&#x4EF6;&#x91CC;&#x9762;&#x5F15;&#x5165;router-view&#x7EC4;&#x4EF6;&#x6765;&#x6E32;&#x67D3;&#x8DEF;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;</p>
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;router-view /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>&#x6211;&#x4EEC;&#x6765;&#x9010;&#x4E2A;&#x5206;&#x6790;&#xFF1A;</p>
+<ul>
+<li>1&#x3001;&#x7531;&#x4E8E;&#x662F;Vue&#x63D2;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x5B9A;&#x662F;&#x8981;&#x63D0;&#x4F9B;install()&#x65B9;&#x6CD5;</li>
+<li>2&#x3001;&#x53EF;&#x4EE5;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x6240;&#x4EE5;VueRouter&#x662F;&#x4E2A;Class&#xFF0C;&#x5E76;&#x4E14;&#x6784;&#x9020;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x9009;&#x9879;</li>
+<li>3&#x3001;&#x53EA;&#x6CE8;&#x5165;&#x5230;&#x8DDF;&#x8282;&#x70B9;&#xFF0C;&#x4F46;&#x662F;&#x5B50;&#x8282;&#x70B9;&#x4E5F;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x5230;&#x8BE5;&#x5B9E;&#x4F8B;&#x6765;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982;this.$router.push()&#x6765;&#x8DF3;&#x8F6C;&#x8DEF;&#x7531;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5C06;router&#x4E5F;&#x6CE8;&#x5165;&#x5230;&#x5404;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</li>
+<li>4&#x3001;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;router-view&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;</li>
+</ul>
+<p>&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x51E0;&#x70B9;&#x4F5C;&#x4E3A;&#x7A81;&#x7834;&#x53E3;&#xFF0C;&#x9010;&#x6B65;&#x6DF1;&#x5165;&#x2026;&#x2026;</p>
+<h3 id="&#x5982;&#x4F55;&#x5B9E;&#x73B0;">&#x5982;&#x4F55;&#x5B9E;&#x73B0;</h3>
+<blockquote>
+<p>install()&#x662F;&#x63D2;&#x4EF6;&#x7684;&#x5165;&#x53E3;&#xFF0C;vue&#x4F1A;&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#x6765;&#x542F;&#x7528;&#x63D2;&#x4EF6;&#xFF0C;install&#x63A5;&#x53D7;2&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; Vue &#x6784;&#x9020;&#x5668;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF0C;&#x63D2;&#x4EF6;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#x6216;&#x5C5E;&#x6027;&#x3001;&#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x6307;&#x4EE4;&#x3001;&#x6CE8;&#x5165;&#x7EC4;&#x4EF6;&#x9009;&#x9879;&#x3001;&#x6DFB;&#x52A0;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x5B98;&#x7F51;&#x4F20;&#x9001;&#x95E8;&#xFF1A;<a href="https://cn.vuejs.org/v2/guide/plugins.html" target="_blank">Vue&#x63D2;&#x4EF6;</a></p>
+</blockquote>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4FE1;&#x606F;&#x6240;&#x5F97;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x9700;&#x8981;&#x5B9E;&#x73B0;install()&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x8981;&#x505A;&#x4E9B;&#x4EC0;&#x4E48;&#x5462;?&#x9996;&#x5148;&#x60F3;&#x5230;&#x7684;&#x5C31;&#x662F;&#x5B9E;&#x73B0;&#x5C06;VueRouter&#x5B9E;&#x4F8B;&#x6CE8;&#x5165;&#x5230;&#x5404;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<p>1&#x3001;&#x6839;&#x636E;&#x7EC4;&#x4EF6;&#x9009;&#x9879;&#x4E0A;&#x662F;&#x5426;&#x6709;router&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x6839;&#x7EC4;&#x4EF6;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x5C06;_routeRoot&#x5C5E;&#x6027;&#x6307;&#x5411;this&#x3001;&#x5C06;this.$options.router&#x9009;&#x9879;&#x503C;&#x8D4B;&#x7ED9;_router&#x5C5E;&#x6027;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x5219;&#x5C06;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;_routeRoot&#x5C5E;&#x6027;&#x6307;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x7684;_routeRoot&#x5C5E;&#x6027;</p>
+<p>&#x8FD9;&#x4E2A;&#x5224;&#x65AD;&#x5728;beforeCreate&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x5B8C;&#x6210;&#xFF0C;&#x5168;&#x5C40;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6DF7;&#x5165;&#xFF0C;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><strong>vue-router/install.js</strong></p>
+<pre><code>function install(Vue){
+
+  // &#x5168;&#x5C40;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6DF7;&#x5165;
+  Vue.mixin({
+    beforeCreate() {
+      // &#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4F1A;&#x4ECE;&#x7236;&#x5F80;&#x5B50;&#x53BB;&#x4F9D;&#x6B21;&#x6267;&#x884C;
+      if(this.$options.router){ // &#x53EA;&#x6709;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x624D;&#x6709;router&#x9009;&#x9879;
+        this._routeRoot = this
+        this._router = this.$options.router // new VueRouter() VueRouter&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
+      }else{
+        // &#x6BCF;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;_routeRoot&#x5C5E;&#x6027;&#x6307;&#x5411;&#x6839;&#x5B9E;&#x4F8B;&#xFF0C;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x8DDF;&#x5B9E;&#x4F8B;&#x7684;router
+        this._routeRoot = this.$parent &amp;&amp; this.$parent._routeRoot 
+      }
+    },
+  })
+
+}
+</code></pre><p>&#x7531;&#x4E8E;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x90FD;&#x662F;&#x4ECE;&#x7236;&#x5230;&#x5B50;&#x518D;&#x5230;&#x5B59;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x6267;&#x884C;&#x4F1A;&#x5148;&#x7ED9;&#x6839;&#x7EC4;&#x4EF6;&#x8D4B;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x6BCF;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x7ED1;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;_routeRoot &#x5C5E;&#x6027;&#x6765;&#x6307;&#x5411;&#x6839;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>2&#x3001;&#x62FF;&#x5230;&#x4E86;&#x6839;&#x7EC4;&#x4EF6;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x4E8B;&#x60C5;&#x5C31;&#x597D;&#x8BF4;&#x4E86;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#xFF0C;VueRouter&#x5B9E;&#x4F8B;&#xFF08;&#x6839;&#x7EC4;&#x4EF6;&#x7684;_router&#x5C5E;&#x6027;&#xFF09;&#x5C31;&#x6CE8;&#x5165;&#x5230;&#x5404;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x4E86;&#xFF1A;</p>
+<p><strong>vue-router/install.js</strong></p>
+<pre><code>function install(Vue){
+     // &#x5168;&#x5C40;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6DF7;&#x5165;
+    Vue.mixin({
+        ...
+    })
+
+    Object.defineProperty(Vue.prototype, &apos;$router&apos;, {
+        get(){
+          return this._routeRoot._router // &#x8FD4;&#x56DE;&#x8DDF;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;VueRouter&#x5B9E;&#x4F8B;
+        }
+      })
+}
+</code></pre><p>&#x5230;&#x8FD9;&#x91CC;&#x4E07;&#x91CC;&#x957F;&#x5F81;&#x8D70;&#x51FA;&#x4E86;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x4FBF;&#x662F;VueRouter&#x7C7B;&#x767B;&#x573A;&#x3002;</p>
+<p><strong>vue-router/index.js</strong></p>
+<pre><code>import install from &apos;./install&apos;
+
+class VueRouter{
+    constructor(options){
+        this.routes = options.routes || [] // &#x4F20;&#x5165;&#x7684;&#x8DEF;&#x7531;&#x6570;&#x7EC4;
+        this.mode = options.mode || &apos;hash&apos;
+    }
+}
+
+VueRouter.install = install
+
+export default VueRouter
+</code></pre><p>&#x524D;&#x9762;&#x8BF4;&#x5230;&#x5728;&#x5B9E;&#x4F8B;&#x5316;VueRouter&#x7C7B;&#x65F6;&#x9700;&#x8981;&#x4F20;&#x5165;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x53C2;&#x6570;&#xFF0C;&#x914D;&#x7F6E;&#x91CC;&#x9762;&#x6709;2&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x53C2;&#x6570;:mode&#x548C;routes&#x3002;</p>
+<p>mode&#x4EE3;&#x8868;&#x662F;hash&#x6A21;&#x5F0F;&#x8FD8;&#x662F;history&#x6A21;&#x5F0F;&#xFF0C;&#x5B98;&#x7F51;&#x9ED8;&#x8BA4;hash&#x6A21;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x6587;&#x4E5F;&#x4EE5;hash&#x6A21;&#x5F0F;&#x6765;&#x505A;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>routes&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x91CC;&#x9762;&#x914D;&#x7F6E;&#x7684;&#x662F;&#x8DEF;&#x5F84;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x8DEF;&#x7531;&#x662F;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x7684;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6700;&#x7EC8;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x7531;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x6839;&#x636E;&#x8DEF;&#x5F84;&#x5730;&#x5740;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&quot;/about&quot;&#x5BF9;&#x5E94;About&#x7EC4;&#x4EF6;&#xFF0C;&quot;/about/a&quot;&#x5BF9;&#x5E94;&#x7684;&#x5C31;&#x662F;A&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x53BB;&#x6241;&#x5E73;&#x5316;routes&#x6570;&#x7EC4;&#xFF0C;&#x6839;&#x636E;path&#x6765;&#x751F;&#x6210;&#x4E00;&#x4EFD;map&#x8BB0;&#x5F55;&#xFF0C;&#x8001;&#x53F8;&#x673A;&#x4E00;&#x773C;&#x5C31;&#x770B;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x8FD9;&#x4E0D;&#x5C31;&#x662F;&#x4E2A;&#x9012;&#x5F52;&#x561B;</p>
+<p>&quot;/about/a&quot;&#x5BF9;&#x5E94;&#x7684;&#x662F;A&#x7EC4;&#x4EF6;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&quot;/about&quot;&#x5BF9;&#x5E94;About&#x7EC4;&#x4EF6;&#x4E5F;&#x662F;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B50;&#x8DEF;&#x7531;&#x7684;path&#x524D;&#x9762;&#x662F;&#x6CA1;&#x6709;&#x5E26;&#x4E0A;&#x7236;&#x8DEF;&#x5F84;&#x7684;&#xFF0C;&#x662F;&#x9700;&#x8981;&#x81EA;&#x52A8;&#x8865;&#x5168;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x505A;&#x9012;&#x5F52;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x4EFD;&#x8BB0;&#x5F55;&#x90FD;&#x8981;&#x5E26;&#x4E0A;&#x7236;&#x8DEF;&#x7531;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><strong>vue-router/create-route-map.js</strong></p>
+<pre><code>// routes&#x662F;&#x7528;&#x6237;&#x4F20;&#x5165;&#x7684;&#x914D;&#x7F6E;
+export default function createRouteMap(routes){
+  let pathList = []
+  let pathMap = Object.create(null)
+
+  routes.forEach(route =&gt; {
+    addRouteRecord(route, pathList, pathMap)
+  });
+
+  return {
+    pathList,
+    pathMap
+  }
+}
+
+// &#x5BF9;routes&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x9012;&#x5F52;
+function addRouteRecord(route, pathList, pathMap, parent){
+  let path = parent ? `${parent.path}/${route.path}` : route.path // &#x5982;&#x679C;&#x5B58;&#x5728;parent&#xFF0C;&#x5219;&#x8865;&#x5168;path
+  let record = {
+    path,
+    component: route.component, // &#x7528;&#x6237;&#x914D;&#x7F6E;&#x7684;path&#x6240;&#x5BF9;&#x5E94;&#x7684;component
+    parent,
+    // &#x6E90;&#x7801;&#x91CC;&#x9762;&#x8FD9;&#x91CC;&#x8FD8;&#x6DFB;&#x52A0;&#x4E86;regex&#x3001;alias&#x3001;name&#x7B49;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x7B80;&#x6D01;&#x53EA;&#x4FDD;&#x7559;&#x4EE5;&#x4E0A;3&#x4E2A;
+  }
+
+  if(!pathMap[path]){// &#x5982;&#x679C;Map&#x91CC;&#x9762;&#x6CA1;&#x6709;
+    pathList.push(path)
+    pathMap[path] = record
+  } 
+
+  if(route.children){
+    route.children.forEach(child =&gt; {
+      addRouteRecord(child, pathList, pathMap, record) // &#x8FD9;&#x91CC;&#x7684;record&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x4E0B;&#x4E00;&#x6B21;&#x7684;parent
+    })
+  }
+}
+</code></pre><p>&#x4E00;&#x756A;&#x64CD;&#x4F5C;&#x4E0B;&#x6765;&#xFF0C;&#x4E4B;&#x524D;&#x7684;routes&#x914D;&#x7F6E;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code>pathMap = {
+    &apos;/&apos;: {
+        path: &apos;/&apos;,
+        component: Home,
+        parent: undefined
+    },
+    &apos;/about&apos;:{
+        path: &apos;/about&apos;,
+        component: About,
+        parent: undefined
+    },
+    &apos;/about/a&apos;:{
+        path: &apos;/about/a&apos;,
+        component: A,
+        parent: {
+            path: &apos;/about&apos;,
+            component: About,
+            parent: undefined
+        }
+    },
+    &apos;/about/b&apos;:{
+        path: &apos;/about/b&apos;,
+        component: B,
+        parent: {
+            path: &apos;/about&apos;,
+            component: About,
+            parent: undefined
+        }
+    },
+}
+</code></pre><p>&#x5230;&#x8FD9;&#x91CC;&#x79BB;&#x6210;&#x529F;&#x53C8;&#x8FD1;&#x4E86;&#x4E00;&#x6B65;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x8981;&#x5B9E;&#x73B0;&#x901A;&#x8FC7;&#x8DEF;&#x5F84;&#x4E00;&#x6B65;&#x5230;&#x4F4D;&#x627E;&#x5230;&#x6240;&#x6709;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x5668;&#xFF08;Matcher&#xFF09;&#x6765;&#x5B8C;&#x6210;&#x8FD9;&#x4E2A;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<p><strong>vue-router/create-matcher.js</strong></p>
+<pre><code>import createRouteMap from &apos;./create-route-map&apos;
+import { createRoute } from &apos;./util/route&apos;
+
+export default function createMatcher(routes){ // routes : &#x7528;&#x6237;&#x4F20;&#x5165;&#x7684;&#x8DEF;&#x7531;&#x914D;&#x7F6E;
+    let {pathList, pathMap} = createRouteMap(routes)
+
+    function match(location){
+        let record = pathMap[location] // &#x53D6;&#x51FA;map&#x91CC;&#x9762;&#x5B58;&#x653E;&#x7684;record
+        if(record){
+          return createRoute(record, {
+            path: location
+          })
+        }
+        return createRoute(null, {
+          path: location
+        })
+  }
+
+  return {
+    match
+  }
+}
+</code></pre><p><strong>vue-router/util/route.js</strong></p>
+<pre><code>export function createRoute(record, location){
+  let res = []
+  if(record){
+    while(record){
+      res.unshift(record) // &#x6DFB;&#x52A0;&#x5230;&#x6700;&#x5F00;&#x5934;
+      record = record.parent
+    }
+  }
+  return {
+    ...location,
+    matched:res
+  }
+}
+</code></pre><p>&#x4EE3;&#x7801;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;createRoute&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5904;&#x7406;&#x4E0A;&#x4E00;&#x4EFD;&#x4EE3;&#x7801;Map&#x91CC;&#x9762;&#x5B58;&#x653E;&#x7684;record&#xFF0C;&#x518D;&#x6765;&#x56DE;&#x987E;&#x4E00;&#x4E0B;record&#xFF1A;</p>
+<pre><code>{
+    path: &apos;/about/a&apos;,
+    component: A,
+    parent: {
+        path: &apos;/about&apos;,
+        component: About,
+        parent: undefined
+    }
+}
+</code></pre><p>&#x524D;&#x9762;&#x6709;&#x8BF4;&#x5230;parent&#x5F88;&#x91CD;&#x8981;&#xFF0C;createRoute&#x65B9;&#x6CD5;&#x91CC;&#x901A;&#x8FC7;while&#x5FAA;&#x73AF;&#x4E0D;&#x505C;&#x7684;&#x5411;&#x4E0A;&#x67E5;&#x627E;parent&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x63D2;&#x5165;&#x5230;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x8C03;&#x7528;match&#x65B9;&#x6CD5;&#x5C06;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code>{
+    path: &apos;/about/a&apos;,
+    matched:[About, A]
+}
+</code></pre><p>&#x5230;&#x8FD9;&#x91CC;&#x524D;&#x671F;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x5C31;&#x5DEE;&#x4E0D;&#x591A;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C06;match&#x65B9;&#x6CD5;&#x6302;&#x5230;VueRouter&#x4E0A;&#xFF1A;</p>
+<pre><code>import install from &apos;./install&apos;
+
+class VueRouter{
+    constructor(options){
+        this.routes = options.routes || [] // &#x4F20;&#x5165;&#x7684;&#x8DEF;&#x7531;&#x6570;&#x7EC4;
+        this.mode = options.mode || &apos;hash&apos;
+
+        // &#x65B0;&#x6DFB;&#x52A0;
+        this.matcher = createMatcher(this.routes) // {match}
+    }
+
+    // &#x65B0;&#x6DFB;&#x52A0;
+    match(location){
+       return this.matcher.match(location)
+    }
+}
+
+VueRouter.install = install
+
+export default VueRouter
+</code></pre><p>&#x4E0A;&#x9762;&#x505A;&#x8FD9;&#x4E48;&#x591A;&#x90FD;&#x662F;&#x5728;&#x5904;&#x7406;&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF0C;&#x73B0;&#x5728;&#x5F00;&#x59CB;&#x771F;&#x6B63;&#x5904;&#x7406;&#x8DEF;&#x7531;&#x3002;&#x7531;&#x4E8E;&#x8DEF;&#x7531;&#x662F;&#x5206;hash&#x548C;history&#x6A21;&#x5F0F;&#x7684;&#xFF08;&#x6E90;&#x7801;&#x8FD8;&#x6709;abstract&#x6A21;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;&#x524D;&#x7AEF;&#x7528;&#x4E0D;&#x4E0A;&#x6240;&#x4EE5;&#x6309;&#x4E0B;&#x4E0D;&#x8868;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x53C8;&#x6709;&#x5171;&#x540C;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6240;&#x4EE5;&#x6E90;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x57FA;&#x7C7B;&#x52A0;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code>history
+|--abstract.js
+|--base.js
+|--hash.js
+|--html5.js
+</code></pre><p>base&#x4E3A;&#x57FA;&#x7C7B;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x51E0;&#x79CD;&#x6A21;&#x5F0F;&#x5171;&#x540C;&#x7684;&#x5904;&#x7406;&#xFF0C;hash&#x3001;html5&#x3001;abstract.&#x5BF9;&#x5E94;&#x7684;&#x5404;&#x79CD;&#x6A21;&#x5F0F;&#x7279;&#x5B9A;&#x7684;&#x5904;&#x7406;&#xFF0C; &#x524D;&#x9762;&#x5DF2;&#x7ECF;&#x8BF4;&#x4E86;&#x672C;&#x6587;&#x4E3B;&#x8981;&#x5B9E;&#x73B0;hash&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x518D;&#x56DE;&#x5934;&#x770B;&#x770B;&#x7EC8;&#x6781;&#x76EE;&#x6807;&#xFF1A;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x5730;&#x5740;&#xFF0C;&#x6765;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x89C6;&#x56FE;&#xFF0C;&#x6240;&#x4EE5;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<ul>
+<li>1&#x3001;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x5730;&#x5740;&#xFF1A;getCurrentLocation()</li>
+<li>2&#x3001;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#xFF1A;translateTo()</li>
+<li>3&#x3001;&#x6DFB;&#x52A0;&#x8DEF;&#x7531;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;: setupListeners()</li>
+</ul>
+<p>&#x7531;&#x4E8E;1&#x3001;3&#x4E0D;&#x540C;&#x6A21;&#x5F0F;&#x5904;&#x7406;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x653E;&#x5230;hash.js&#x91CC;&#x9762;&#x5904;&#x7406;&#xFF0C;2&#x662F;&#x5171;&#x540C;&#x7684;&#x6240;&#x4EE5;&#x653E;&#x5230;base.js&#x91CC;&#x9762;</p>
+<p><strong>vue-router/history/hash.js</strong></p>
+<pre><code>import History from &apos;./base&apos;
+
+export default class HashHistory extends History{
+  constructor(router){
+    super(router) // &#x5C06;VueRouter&#x5B9E;&#x4F8B;&#x4F20;&#x9001;&#x7ED9;&#x57FA;&#x7C7B;
+
+    ensureSlash() // &#x786E;&#x4FDD;&#x5730;&#x5740;&#x5305;&#x542B;&#x659C;&#x6760;
+  }
+
+  getCurrentLocation(){
+    return getHash()
+  }
+
+  setupListeners(){
+    window.addEventListener(&apos;hashchange&apos;, ()=&gt;{
+      this.translateTo(getHash())
+    })
+  }
+}
+
+function getHash(){
+  return window.location.hash.slice(1) // Firefox&#x4F1A;&#x4E0D;&#x517C;&#x5BB9;
+}
+
+// &#x786E;&#x4FDD;&#x5730;&#x5740;&#x5305;&#x542B;&#x659C;&#x6760;
+function ensureSlash(){
+  const hash = getHash()
+  if (hash) {
+    return true
+  }
+  window.location.hash = &apos;/&apos;
+  return false
+}
+</code></pre><p>hash&#x91CC;&#x9762;&#x9664;&#x5F00;&#x4E0A;&#x9762;&#x6240;&#x8BF4;&#x7684;getCurrentLocation()&#x548C;setupListeners()&#xFF0C;&#x8FD8;&#x8C03;&#x7528;&#x4E86;ensureSlash(),&#x8BE5;&#x65B9;&#x6CD5;&#x4E3B;&#x8981;&#x662F;&#x786E;&#x4FDD;&#x8DEF;&#x5F84;&#x5730;&#x5740;&#x5305;&#x542B;&#x659C;&#x6760;&#xFF0C;&#x4F8B;&#x5982;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165;&#xFF1A;<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> &#x4F1A;&#x81EA;&#x52A8;&#x53D8;&#x6210;<a href="http://localhost:8080/#/&#xFF0C;&#x4ECE;&#x800C;&#x62FF;&#x5230;hash&#x503C;&#x201C;/&#x201D;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x201C;/&#x201D;&#x518D;&#x5339;&#x914D;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x3002;" target="_blank">http://localhost:8080/#/&#xFF0C;&#x4ECE;&#x800C;&#x62FF;&#x5230;hash&#x503C;&#x201C;/&#x201D;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x201C;/&#x201D;&#x518D;&#x5339;&#x914D;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</a></p>
+<p><strong>vue-router/history/base.js</strong></p>
+<pre><code>import { createRoute } from &apos;../util/route&apos;
+
+export default class History{
+  constructor(router){
+    this.router = router // VueRouter&#x5B9E;&#x4F8B;
+    this.current = createRoute(null, {
+      path: &apos;/&apos;
+    })
+  }
+
+  translateTo(location, onComplete){
+    let route = this.router.match(location)
+
+    if(location === this.current.path &amp;&amp; route.matched.length === this.current.matched.length) return
+
+    this.updateRoute(route)
+
+    onComplete &amp;&amp; onComplete()
+  }
+
+  updateRoute(route){
+    this.current = route
+  }
+}
+</code></pre><p>base&#x91CC;&#x9762;&#x5C06;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x4FDD;&#x5B58;&#x5728;current&#x5C5E;&#x6027;&#x4E0A;&#xFF0C;&#x7528;&#x5B83;&#x6765;&#x641E;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#x5B8C;&#x4E86;&#xFF0C;&#x5F53;&#x7136;&#x662F;&#x8981;&#x7528;&#x8D77;&#x6765;&#x4E86;&#xFF0C;&#x56DE;&#x5230;VueRouter&#x7C7B;&#xFF1A;</p>
+<p><strong>vue-router/index.js</strong></p>
+<pre><code>import createMatcher from &apos;./create-matcher&apos;
+import HashHistory from &apos;./history/hash&apos;
+import install from &apos;./install&apos;
+class VueRouter{
+ constructor(options){
+  this.routes = options.routes || [] // &#x4F20;&#x5165;&#x7684;&#x8DEF;&#x7531;&#x6570;&#x7EC4;
+  this.mode = options.mode || &apos;hash&apos;
+
+  this.matcher = createMatcher(this.routes) // {match}
+
+  // &#x65B0;&#x6DFB;&#x52A0;
+  this.history = new HashHistory(this)
+ }
+
+ // &#x65B0;&#x6DFB;&#x52A0;
+ init(app){ // app&#x6307;&#x5411;&#x6839;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;
+   const history = this.history
+
+   // &#x5BF9;location&#x89E3;&#x6790;&#x5B8C;&#x540E;&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;
+   const setupListeners = ()=&gt;{
+    history.setupListeners()
+   }
+   history.translateTo(history.getCurrentLocation(), setupListeners) // &#x8DDF;&#x8FDB;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;matched
+ }
+ match(location){
+   return this.matcher.match(location)
+ }
+}
+
+VueRouter.install = install
+
+export default VueRouter
+</code></pre><p>VueRouter&#x7C7B;&#x91CC;&#x9762;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;HashHistory&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x6DFB;&#x52A0;&#x4E86;init()&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x6839;&#x7EC4;&#x4EF6;beforeCreate&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x8C03;&#x7528;&#xFF1A;</p>
+<p><strong>vue-router/install.js</strong></p>
+<pre><code>function install(Vue){
+    // &#x5168;&#x5C40;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6DF7;&#x5165;
+  Vue.mixin({
+    beforeCreate() {
+      // &#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4F1A;&#x4ECE;&#x7236;&#x5F80;&#x5B50;&#x53BB;&#x4F9D;&#x6B21;&#x6267;&#x884C;
+      if(this.$options.router){ // &#x53EA;&#x6709;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x624D;&#x6709;router&#x9009;&#x9879;
+        this._routeRoot = this
+        this._router = this.$options.router // new VueRouter() VueRouter&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
+
+        // &#x65B0;&#x6DFB;&#x52A0;
+        this._router.init(this)
+
+      }else{
+        // &#x6BCF;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;_routeRoot&#x5C5E;&#x6027;&#x6307;&#x5411;&#x6839;&#x5B9E;&#x4F8B;&#xFF0C;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x8DDF;&#x5B9E;&#x4F8B;&#x7684;router
+        this._routeRoot = this.$parent &amp;&amp; this.$parent._routeRoot 
+      }
+    },
+  })
+
+  Object.defineProperty(Vue.prototype, &apos;$router&apos;, {
+    get(){
+      return this._routeRoot._router // &#x8FD4;&#x56DE;&#x8DDF;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;VueRouter&#x5B9E;&#x4F8B;
+    }
+  })
+}
+</code></pre><p>&#x5230;&#x6B64;&#x4E3A;&#x6B62;&#xFF0C;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x6839;&#x636E;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x83B7;&#x53D6;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#xFF08;&#x4E3B;&#x8981;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5728;hash&#x53D8;&#x5316;&#x65F6;&#x4F1A;&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x662F;&#x52A8;&#x6001;&#x6E32;&#x67D3;&#x89C6;&#x56FE;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x57FA;&#x4E8E;Vue&#x6846;&#x67B6;&#xFF0C;&#x81EA;&#x5E26;MVVM&#x5149;&#x73AF;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x72B6;&#x6001;&#x4FBF;&#x81EA;&#x52A8;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x72B6;&#x6001;&#x5728;&#x54EA;&#x4E2A;&#x7EC4;&#x4EF6;&#x6700;&#x5408;&#x9002;&#x5462;&#xFF1F;&#x4E0D;&#x7528;&#x8BF4;&#x80AF;&#x5B9A;&#x662F;&#x6839;&#x7EC4;&#x4EF6;&#x4E86;&#x3002;</p>
+<p><strong>vue-router/install.js</strong></p>
+<pre><code>function install(Vue){
+  // &#x5168;&#x5C40;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6DF7;&#x5165;
+  Vue.mixin({
+    beforeCreate() {
+      // &#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4F1A;&#x4ECE;&#x7236;&#x5F80;&#x5B50;&#x53BB;&#x4F9D;&#x6B21;&#x6267;&#x884C;
+      if(this.$options.router){ // &#x53EA;&#x6709;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x624D;&#x6709;router&#x9009;&#x9879;
+        this._routeRoot = this
+        this._router = this.$options.router // new VueRouter() VueRouter&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
+
+        this._router.init(this) // &#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;this&#x4F20;&#x9012;&#x7ED9;init()
+
+       // &#x65B0;&#x6DFB;&#x52A0;
+        Vue.util.defineReactive(this, &apos;_route&apos;, this._router.history.current) // &#x5F80;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x6CE8;&#x5165;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5C5E;&#x6027;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;current
+      }else{
+        // &#x6BCF;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;_routeRoot&#x5C5E;&#x6027;&#x6307;&#x5411;&#x6839;&#x5B9E;&#x4F8B;&#xFF0C;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x8DDF;&#x5B9E;&#x4F8B;&#x7684;router
+        this._routeRoot = this.$parent &amp;&amp; this.$parent._routeRoot 
+      }
+    },
+  })
+
+  Object.defineProperty(Vue.prototype, &apos;$router&apos;, {
+    get(){
+      return this._routeRoot._router // &#x8FD4;&#x56DE;&#x8DDF;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;VueRouter&#x5B9E;&#x4F8B;
+    }
+  })
+
+  // &#x65B0;&#x6DFB;&#x52A0;
+  Object.defineProperty(Vue.prototype, &apos;$route&apos;, {
+    get(){
+      return this._routeRoot._route // &#x8FD4;&#x56DE;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;_route&#x5C5E;&#x6027;&#x503C;
+    }
+  })
+
+}
+</code></pre><p>&#x5728;&#x6839;&#x7EC4;&#x4EF6;&#x4E0A;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;_route&#x54CD;&#x5E94;&#x5F0F;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x548C;$router&#x4E00;&#x6837;&#xFF0C;&#x6CE8;&#x5165;&#x5230;&#x5404;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;this.$route&#x6765;&#x83B7;&#x53D6;&#x8DEF;&#x7531;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#xFF0C;&#x5982;path&#x3001;hash&#x3001;matched&#x7B49;&#xFF0C;&#x5F53;&#x7136;&#x672C;&#x6587;&#x6CA1;&#x6709;&#x5168;&#x90E8;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x5230;&#x8FD9;&#x91CC;&#x5B9E;&#x73B0;&#x4EE5;&#x975E;&#x96BE;&#x4E8B;&#x3002;&#x5B98;&#x7F51;&#x4F20;&#x9001;&#x95E8;&#xFF1A;<a href="https://router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7" target="_blank">&#x8DEF;&#x7531;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;</a></p>
+<p>_route&#x5C5E;&#x6027;&#x5728;beforeCreate&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x8FDB;&#x884C;&#x4E86;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#x65F6;&#x4E5F;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x7531;&#x4E8E;&#x8C03;&#x7528;init()&#x65B9;&#x6CD5;&#x65F6;&#x4F20;&#x5165;&#x4E86;&#x6839;&#x5B9E;&#x4F8B;app&#x53C2;&#x6570;&#xFF0C;&#x6240;&#x4EE5;app._route&#x8BBE;&#x7F6E;&#x4E3A;&#x65B0;&#x503C;&#x5373;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#x3002;</p>
+<p><strong>vue-router/index.js</strong></p>
+<pre><code>import createMatcher from &apos;./create-matcher&apos;
+import HashHistory from &apos;./history/hash&apos;
+import install from &apos;./install&apos;
+class VueRouter{
+ constructor(options){
+  this.routes = options.routes || [] // &#x4F20;&#x5165;&#x7684;&#x8DEF;&#x7531;&#x6570;&#x7EC4;
+  this.mode = options.mode || &apos;hash&apos;
+
+  this.matcher = createMatcher(this.routes) // {match}
+
+  this.history = new HashHistory(this)
+ }
+
+ // app&#x6307;&#x5411;&#x6839;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;
+ init(app){
+   const history = this.history
+
+   // &#x5BF9;location&#x89E3;&#x6790;&#x5B8C;&#x540E;&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;
+   const setupListeners = ()=&gt;{
+    history.setupListeners()
+   }
+   history.translateTo(history.getCurrentLocation(), setupListeners) // &#x8DDF;&#x8FDB;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;matched
+
+   // &#x65B0;&#x6DFB;&#x52A0;
+   // &#x8DEF;&#x7531;&#x53D8;&#x5316;&#x540E;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;_route&#x5C5E;&#x6027;&#xFF0C;&#x7531;&#x4E8E;_route&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x66F4;&#x65B0;&#x5BF9;&#x5E94;&#x89C6;&#x56FE;
+   // &#x521D;&#x59CB;&#x5316;&#x65F6;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x89E6;&#x53D1;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x653E;&#x5728;translateTo&#x540E;&#x9762;
+   history.listen( route =&gt;{
+    app._route = route
+   })
+ }
+ match(location){
+   return this.matcher.match(location)
+ }
+}
+
+VueRouter.install = install
+
+export default VueRouter
+</code></pre><p>&#x7531;&#x4E8E;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#x662F;&#x5728;history&#x91CC;&#x9762;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86;history.listen()&#x65B9;&#x6CD5;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<p><strong>vue-router/history/base.js</strong></p>
+<pre><code>import { createRoute } from &apos;../util/route&apos;
+
+export default class History{
+  constructor(router){
+    this.router = router // VueRouter&#x5B9E;&#x4F8B;
+    this.current = createRoute(null, {
+      path: &apos;/&apos;
+    })
+  }
+
+  translateTo(location, onComplete){
+    let route = this.router.match(location)
+
+    if(location === this.current.path &amp;&amp; route.matched.length === this.current.matched.length) return
+
+    this.updateRoute(route)
+
+    onComplete &amp;&amp; onComplete()
+  }
+
+  updateRoute(route){
+    this.current = route
+
+    // &#x65B0;&#x6DFB;&#x52A0;
+    this.cb &amp;&amp; this.cb(route) //&#x8FD9;&#x91CC;&#x4F1A;&#x8BBE;&#x7F6E;app._route&#x4ECE;&#x800C;&#x89E6;&#x53D1;&#x66F4;&#x65B0;
+  }
+
+  // &#x65B0;&#x6DFB;&#x52A0;
+  listen( cb ){
+    this.cb = cb // &#x5C06;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#x7684;&#x56DE;&#x8C03;&#x5B58;&#x50A8;&#x8D77;&#x6765;
+  }
+}
+</code></pre><p>&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x6709;&#x4E86;&#xFF0C;&#x53EA;&#x5DEE;&#x6700;&#x540E;&#x4E00;&#x6B65;&#xFF1A;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;router-view&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x73B0;</p>
+<p>&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;router-view&#x7EC4;&#x4EF6;&#x5E76;&#x4E0D;&#x9002;&#x5408;&#x5E38;&#x89C4;&#x7684;&#x57FA;&#x4E8E;&#x6A21;&#x677F;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x800C;&#x66F4;&#x9002;&#x5408;&#x4F7F;&#x7528;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF0C;&#x800C;&#x4E14;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x76D1;&#x542C;&#x4EFB;&#x4F55;&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x6E32;&#x67D3;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x66F4;&#x9002;&#x5408;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#xFF0C;&#x5B98;&#x7F51;&#x4F20;&#x9001;&#x95E8;&#xFF1A;<a href="https://cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6" target="_blank">&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;</a></p>
+<p>&#x63A5;&#x7740;&#x601D;&#x8003;&#xFF0C;&#x600E;&#x6837;&#x83B7;&#x53D6;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#xFF1F;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x6CA1;&#x6709;this&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F46;render&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;context&#x4EE3;&#x8868;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;context.parent&#x6765;&#x83B7;&#x53D6;&#x5916;&#x5C42;&#x7684;&#x7236;&#x7EC4;&#x4EF6;&#xFF0C;&#x7531;&#x4E8E;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5C06;$route&#x6CE8;&#x5165;&#x5230;&#x5404;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;context.parent.$route.matched&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x6240;&#x6709;&#x9700;&#x8981;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x518D;&#x63A5;&#x7740;&#x601D;&#x8003;&#xFF0C;matched&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4F8B;&#x5982;&#x5F53;&#x524D;path&#x662F;&apos;/about/a&apos;&#xFF0C;&#x90A3;&#x4E48;matched = [About, A]&#xFF0C;&#x90A3;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x5F53;&#x524D;&#x662F;&#x6E32;&#x67D3;About&#x8FD8;&#x662F;A&#x5462;&#xFF1F;</p>
+<p>&#x6E32;&#x67D3;&#x90FD;&#x662F;&#x4ECE;&#x7236;&#x7EC4;&#x4EF6;&#x7136;&#x540E;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x7B2C;&#x4E00;&#x6B21;&#x80AF;&#x5B9A;&#x4F1A;&#x662F;About&#x7EC4;&#x4EF6;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x6E32;&#x67D3;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;About&#x7EC4;&#x4EF6;&#x91CC;&#x9762; <router-view>&#x5C31;&#x9700;&#x8981;&#x6E32;&#x67D3;A&#x7EC4;&#x4EF6;&#x4E86;&#xFF0C;&#x6E90;&#x7801;&#x91CC;&#x9762;&#x5904;&#x7406;&#x7684;&#x5F88;&#x5DE7;&#x5999;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;deep&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x9ED8;&#x8BA4;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x7136;&#x540E;&#x7ED9;&#x6BCF;&#x4E2A; <router-view>&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#x7684;data&#x91CC;&#x9762;&#x6CE8;&#x5165;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;routerView&#xFF0C;&#x518D;&#x901A;&#x8FC7;while&#x5FAA;&#x73AF;&#x4E0D;&#x65AD;&#x67E5;&#x627E;&#x7236;&#x7EC4;&#x4EF6;&#x7684;data&#x91CC;&#x9762;&#x662F;&#x5426;&#x6709;routerView&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x5219;deep++&#xFF0C;&#x6700;&#x540E;&#x6839;&#x636E;deep&#x6765;&#x83B7;&#x53D6;&#x6570;&#x7EC4;matched&#x91CC;&#x9762;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</router-view></router-view></p>
+<p>&#x601D;&#x8003;&#x5B8C;&#x6BD5;&#xFF0C;coding time:</p>
+<p><strong>vue-router/compontent/view.js</strong></p>
+<pre><code>
+export default {
+  name: &apos;RouterView&apos;,
+  functional: true, // &#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;
+  render(h, context){
+
+    let parent = context.parent
+    const data = context.data
+    data.routerView = true // &#x7ED9;router-view&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#x6253;&#x4E0A;&#x6807;&#x8BC6;
+    const route = parent.$route // &#x6CE8;&#x5165;&#x5230;&#x6BCF;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;$route
+
+    let deep = 0
+
+    while(parent &amp;&amp; parent !== parent._routeRoot){
+      const vdata = parent.$vnode ? parent.$vnode.data : {}
+
+      if(vdata.routerView){
+        deep++
+      }
+
+      parent = parent.$parent // &#x4E0D;&#x65AD;&#x5F80;&#x4E0A;&#x627E;&#x5230;router-vew&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;
+    }
+
+    const matched = route.matched[deep]
+    const component = matched &amp;&amp; matched.component 
+
+    if(!matched || !component){ return h() } // &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x5230;&#x7EC4;&#x4EF6;&#xFF0C;&#x5219;&#x6E32;&#x67D3;&#x7A7A;
+
+    return h(component, data) // &#x5C06;data&#x4F20;&#x9012;&#x7ED9;&#x8BE5;&#x7EC4;&#x4EF6;
+  }
+}
+</code></pre><p>&#x6700;&#x540E;&#xFF0C;&#x6CE8;&#x518C;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<p><strong>vue-router/install.js</strong></p>
+<pre><code>import RouterView from &apos;./compontent/view&apos;
+
+function install(Vue){
+  // &#x5168;&#x5C40;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x6DF7;&#x5165;
+  Vue.mixin({
+    beforeCreate() {
+      // &#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4F1A;&#x4ECE;&#x7236;&#x5F80;&#x5B50;&#x53BB;&#x4F9D;&#x6B21;&#x6267;&#x884C;
+      if(this.$options.router){ // &#x53EA;&#x6709;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x624D;&#x6709;router&#x9009;&#x9879;
+        this._routeRoot = this
+        this._router = this.$options.router // new VueRouter() VueRouter&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
+
+        this._router.init(this)
+
+        Vue.util.defineReactive(this, &apos;_route&apos;, this._router.history.current) // &#x5F80;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x6CE8;&#x5165;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5C5E;&#x6027;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;current
+      }else{
+        // &#x6BCF;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;_routeRoot&#x5C5E;&#x6027;&#x6307;&#x5411;&#x6839;&#x5B9E;&#x4F8B;&#xFF0C;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x8DDF;&#x5B9E;&#x4F8B;&#x7684;router
+        this._routeRoot = this.$parent &amp;&amp; this.$parent._routeRoot 
+      }
+    },
+  })
+
+  Object.defineProperty(Vue.prototype, &apos;$router&apos;, {
+    get(){
+      return this._routeRoot._router // &#x8FD4;&#x56DE;&#x8DDF;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;VueRouter&#x5B9E;&#x4F8B;
+    }
+  })
+
+  Object.defineProperty(Vue.prototype, &apos;$route&apos;, {
+    get(){
+      return this._routeRoot._route // &#x8FD4;&#x56DE;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;_route&#x5C5E;&#x6027;&#x503C;
+    }
+  })
+
+  // &#x65B0;&#x6DFB;&#x52A0;
+  // &#x6CE8;&#x518C;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;
+  Vue.component(&apos;router-view&apos;,RouterView)
+
+}
+</code></pre><p>&#x5230;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6700;&#x5F00;&#x59CB;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x6574;&#x7406;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="https://rhinosystem.bs2dl.yy.com/cont1611888543089915file" alt="&#x9879;&#x76EE;&#x7ED3;&#x6784;"></p>
+<p>&#x6267;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="https://rhinosystem.bs2dl.yy.com/cont1611819860951489file" alt="&#x6267;&#x884C;&#x6548;&#x679C;"></p>
+<p>GitHub&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/littleyan-xu/vue-router" target="_blank">https://github.com/littleyan-xu/vue-router</a></p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x4E0A;&#x9762;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x5BF9;&#x4E0A;&#x9762;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x6216;&#x52A0;&#x5F3A;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x987A;&#x4FBF;&#x63D0;&#x4E0B;&#xFF1A;</p>
+<p>1&#x3001;addRoutes(routes)&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x8DEF;&#x7531;</p>
+<p>routes&#x53C2;&#x6570;&#x4E5F;&#x662F;&#x4E00;&#x4EFD;&#x7528;&#x6237;&#x914D;&#x7F6E;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x5B9E;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x662F;&#x52A8;&#x6001;&#x66F4;&#x6539;&#x4E0A;&#x9762;&#x7684;pathList&#x3001;pathMap</p>
+<p><strong>create-route-map.js&#x6539;&#x9020;</strong></p>
+<pre><code>export default function createRouteMap(routes, oldPathList, oldPathMap){
+  let pathList = oldPathList || []
+  let pathMap = oldPathMap || Object.create(null)
+
+  routes.forEach(route =&gt; {
+    addRouteRecord(route, pathList, pathMap)
+  });
+
+  return {
+    pathList,
+    pathMap
+  }
+}
+</code></pre><p><strong>create-matcher.js&#x6539;&#x9020;</strong></p>
+<pre><code>export default function createMatcher(routes){
+  let {pathList, pathMap} = createRouteMap(routes) // &#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;
+
+  // &#x65B0;&#x6DFB;&#x52A0;
+  function addRoutes(newRoutes){
+    createRouteMap(newRoutes, pathList, pathMap) // &#x5C06;&#x4E4B;&#x524D;&#x83B7;&#x5F97;&#x7684;&#x6570;&#x636E;&#x518D;&#x4F20;&#x56DE;&#x53BB;&#x6DFB;&#x52A0;
+  }
+
+  function match(location){
+    // &#x7701;&#x7565;...
+  }
+
+  return {
+    addRoutes, // &#x65B0;&#x6DFB;&#x52A0;
+    match
+  }
+}
+</code></pre><p><strong>vue-router/index.js&#x6539;&#x9020;</strong></p>
+<pre><code>class VueRouter{
+    constructor(options){
+        // &#x7701;&#x7565;...
+        this.matcher = createMatcher(this.routes) // {addRoutes, match}
+        // &#x7701;&#x7565;...
+    }
+    addRoutes(routes){
+        this.matcher.addRoutes(routes)
+        this.history.transitionTo(this.history.getCurrentLocation())
+    }
+}
+</code></pre><p>2&#x3001;this.$router.push()&#xFF1A;&#x8DF3;&#x8F6C;&#x8DEF;&#x7531;</p>
+<p>&#x5728;install.js&#x91CC;&#x9762;&#x8BBE;&#x5B9A;$router&#x6307;&#x5411;&#x4E86;VueRouter&#x5B9E;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;push&#x662F;&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x6CD5;</p>
+<p><strong>vue-router/index.js&#x6539;&#x9020;</strong></p>
+<pre><code>push(location, onComplete){
+    this.history.push(location, onComplete)
+}
+</code></pre><p>&#x7531;&#x4E8E;&#x4E0D;&#x540C;&#x6A21;&#x5F0F;&#x5904;&#x7406;&#x8DEF;&#x7531;&#x65B9;&#x5F0F;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x653E;&#x5728;hash.js&#x91CC;&#x9762;&#x5B9E;&#x73B0;</p>
+<p><strong>hash.js&#x6539;&#x9020;</strong></p>
+<pre><code>push(location, onComplete){
+    this.transitionTo(
+      location,
+      route =&gt; {
+        window.location.hash = route.path
+        onComplete &amp;&amp; onComplete(route)
+      })
+}
+</code></pre><p>&#x7BC7;&#x5E45;&#x6709;&#x9650;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x7EE7;&#x7EED;&#x8D58;&#x8FF0;&#xFF0C;&#x638C;&#x63E1;&#x4E86;&#x6838;&#x5FC3;&#x539F;&#x7406;&#xFF0C;&#x518D;&#x53BB;&#x6DFB;&#x7816;&#x52A0;&#x74E6;&#x4E5F;&#x4EE5;&#x975E;&#x96BE;&#x4E8B;&#xFF0C;&#x5F53;&#x7136;&#x6E90;&#x7801;&#x91CC;&#x9762;&#x5B9E;&#x73B0;&#x7684;&#x4F1A;&#x66F4;&#x7EC6;&#x81F4;&#x66F4;&#x5065;&#x58EE;&#xFF0C;VueRouter&#x6E90;&#x7801;&#x4F20;&#x9001;&#x95E8;&#xFF1A;<a href="https://github.com/vuejs/vue-router" target="_blank">https://github.com/vuejs/vue-router</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: VueRouter导航守卫">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"VueRouter核心源码解析","level":"2.2.1","depth":2,"next":{"title":"VueRouter导航守卫","level":"2.2.2","depth":2,"path":"vue-router/2.md","ref":"vue-router/2.md","articles":[]},"previous":{"title":"VueRouter","level":"2.2","depth":1,"ref":"","articles":[{"title":"VueRouter核心源码解析","level":"2.2.1","depth":2,"path":"vue-router/1.md","ref":"vue-router/1.md","articles":[]},{"title":"VueRouter导航守卫","level":"2.2.2","depth":2,"path":"vue-router/2.md","ref":"vue-router/2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue-router/1.md","mtime":"2021-01-29T10:09:40.325Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T10:12:54.568Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

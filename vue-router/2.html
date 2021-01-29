@@ -1,0 +1,642 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>VueRouter导航守卫 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Vue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" >
+            
+                <span>
+            
+                    
+                    Vue响应式系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="../vue/observer/1.html">
+            
+                <a href="../vue/observer/1.html">
+            
+                    
+                    1. 一个简单的开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="../vue/observer/2.html">
+            
+                <a href="../vue/observer/2.html">
+            
+                    
+                    2. 封装Dep类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="../vue/observer/3.html">
+            
+                <a href="../vue/observer/3.html">
+            
+                    
+                    3. 封装Watcher类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="../vue/observer/4.html">
+            
+                <a href="../vue/observer/4.html">
+            
+                    
+                    4. observer转化getter/setter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="../vue/observer/5.html">
+            
+                <a href="../vue/observer/5.html">
+            
+                    
+                    5. 封装Observer类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.6" data-path="../vue/observer/6.html">
+            
+                <a href="../vue/observer/6.html">
+            
+                    
+                    6. 数组响应式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.7" data-path="../vue/observer/7.html">
+            
+                <a href="../vue/observer/7.html">
+            
+                    
+                    7. Vue.js实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.8" data-path="../vue/observer/8.html">
+            
+                <a href="../vue/observer/8.html">
+            
+                    
+                    8. Proxy小试牛刀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.9" data-path="../vue/observer/9.html">
+            
+                <a href="../vue/observer/9.html">
+            
+                    
+                    9. Vue3响应式系统之变化侦测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.10" data-path="../vue/observer/10.html">
+            
+                <a href="../vue/observer/10.html">
+            
+                    
+                    10. Vue3响应式系统之依赖收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" >
+            
+                <span>
+            
+                    
+                    虚拟DOM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../vue/vdom/1.html">
+            
+                <a href="../vue/vdom/1.html">
+            
+                    
+                    1. 实现虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../vue/vdom/2.html">
+            
+                <a href="../vue/vdom/2.html">
+            
+                    
+                    2. Patch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" >
+            
+                <span>
+            
+                    
+                    模板解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1" data-path="../vue/parser/1.html">
+            
+                <a href="../vue/parser/1.html">
+            
+                    
+                    1. 生成AST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.2" data-path="../vue/parser/2.html">
+            
+                <a href="../vue/parser/2.html">
+            
+                    
+                    2. 生成Vnode
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    VueRouter
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    VueRouter核心源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.2" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    VueRouter导航守卫
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    微前端
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../microfrontend/1.html">
+            
+                <a href="../microfrontend/1.html">
+            
+                    
+                    微前端源码解析之single-spa篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../microfrontend/2.html">
+            
+                <a href="../microfrontend/2.html">
+            
+                    
+                    微前端源码解析之qiankun篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >VueRouter导航守卫</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x5B8C;&#x6574;&#x7684;&#x5BFC;&#x822A;&#x89E3;&#x6790;&#x6D41;&#x7A0B;">&#x5B8C;&#x6574;&#x7684;&#x5BFC;&#x822A;&#x89E3;&#x6790;&#x6D41;&#x7A0B;</h3>
+<ol>
+<li>&#x5BFC;&#x822A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</li>
+<li>&#x5728;&#x5931;&#x6D3B;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x8C03;&#x7528; beforeRouteLeave &#x5B88;&#x536B;&#x3002;</li>
+<li>&#x8C03;&#x7528;&#x5168;&#x5C40;&#x7684; beforeEach &#x5B88;&#x536B;&#x3002;</li>
+<li>&#x5728;&#x91CD;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x8C03;&#x7528; beforeRouteUpdate &#x5B88;&#x536B; (2.2+)&#x3002;</li>
+<li>&#x5728;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x91CC;&#x8C03;&#x7528; beforeEnter&#x3002;</li>
+<li>&#x89E3;&#x6790;&#x5F02;&#x6B65;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#x3002;</li>
+<li>&#x5728;&#x88AB;&#x6FC0;&#x6D3B;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x8C03;&#x7528; beforeRouteEnter&#x3002;</li>
+<li>&#x8C03;&#x7528;&#x5168;&#x5C40;&#x7684; beforeResolve &#x5B88;&#x536B; (2.5+)&#x3002;</li>
+<li>&#x5BFC;&#x822A;&#x88AB;&#x786E;&#x8BA4;&#x3002;</li>
+<li>&#x8C03;&#x7528;&#x5168;&#x5C40;&#x7684; afterEach &#x94A9;&#x5B50;&#x3002;</li>
+<li>&#x89E6;&#x53D1; DOM &#x66F4;&#x65B0;&#x3002;</li>
+<li>&#x8C03;&#x7528; beforeRouteEnter &#x5B88;&#x536B;&#x4E2D;&#x4F20;&#x7ED9; next &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x521B;&#x5EFA;&#x597D;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4F1A;&#x4F5C;&#x4E3A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x3002;</li>
+</ol>
+<p>&#x6838;&#x5FC3;&#xFF1A;runQueue&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;</p>
+<h3 id="queue-&#x5B88;&#x536B;&#x961F;&#x5217;">queue &#x5B88;&#x536B;&#x961F;&#x5217;</h3>
+<ul>
+<li>1&#x3001;beforeRouteLeave&#xFF1A;&#x5728;&#x5931;&#x6D3B;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x8C03;&#x7528; beforeRouteLeave &#x5B88;&#x536B;</li>
+<li>2&#x3001;beforeEach&#xFF1A;&#x5168;&#x5C40;&#x7684; beforeEach &#x5B88;&#x536B;</li>
+<li>3&#x3001;beforeRouteUpdate&#xFF1A;&#x5728;&#x91CD;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x8C03;&#x7528; beforeRouteUpdate</li>
+<li>4&#x3001;beforeEnter&#xFF1A;&#x5728;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x91CC;&#x8C03;&#x7528; beforeEnter</li>
+<li>5&#x3001;&#x89E3;&#x6790;&#x5F02;&#x6B65;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;</li>
+<li>&#x3002;&#x3002;&#x3002;</li>
+</ul>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x5B88;&#x536B;&#x90FD;&#x662F;&#x4E00;&#x4E2A;hook&#xFF0C;&#x94A9;&#x5B50;&#x51FD;&#x6570;</p>
+<h3 id="iterator-&#x8FED;&#x4EE3;&#x5668;&#x6267;&#x884C;&#x51FD;&#x6570;">iterator &#x8FED;&#x4EE3;&#x5668;&#x6267;&#x884C;&#x51FD;&#x6570;</h3>
+<pre><code>iterator(hook, next){
+
+    // route&#xFF1A;&#x5373;&#x5C06;&#x8DF3;&#x8F6C;&#x7684;&#x8DEF;&#x7531;
+    // current&#xFF1A;&#x5F53;&#x524D;&#x7684;&#x8DEF;&#x7531;
+    // ()=&gt;: hook&#x6267;&#x884C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x56DE;&#x8C03;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;
+    hook(route, current, (to)=&gt;{
+        // &#x5BF9;to&#x7EE7;&#x7EED;&#x5224;&#x65AD;&#xFF0C;&#x4F8B;&#x5982;&#x662F;&#x5426;&#x662F;false&#x7EC8;&#x6B62;&#x5F53;&#x524D;&#x5BFC;&#x822A;&#xFF0C;&#x662F;&#x5426;&#x662F;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x8DEF;&#x7531;
+        // &#x5982;&#x679C;&#x90FD;&#x6CA1;&#x6709;&#xFF0C;&#x5219;next&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x4E2A;&#x56DE;&#x5230;runQueue&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x4E2A;hook
+        next() 
+    })
+}
+</code></pre><h3 id="runqueue">runQueue</h3>
+<pre><code>export function runQueue (queue: Array&lt;?NavigationGuard&gt;, fn: Function, cb: Function) {
+  const step = index =&gt; {
+    if (index &gt;= queue.length) {
+      cb()
+    } else {
+      if (queue[index]) {
+        fn(queue[index], () =&gt; {
+          step(index + 1)
+        })
+      } else {
+        step(index + 1)
+      }
+    }
+  }
+  step(0)
+}
+</code></pre><p><strong>runQueue(queue, iterator, cb)</strong>&#xFF1A;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x5B88;&#x536B;&#x961F;&#x5217;&#x548C;&#x8FED;&#x4EE3;&#x5668;&#x6267;&#x884C;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x6240;&#x6709;&#x961F;&#x5217;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F20;&#x5165;</p>
+<p>&#x6267;&#x884C;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ol>
+<li>&#x4ECE;queue&#x53D6;&#x51FA;&#x7B2C;1&#x4E2A;&#x5B88;&#x536B;hook&#xFF0C;&#x8C03;&#x7528;iterator&#xFF0C;&#x5C06;&#x5B88;&#x536B;hook&#x548C;&#x4E0B;&#x6807;+1&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F20;&#x5165;</li>
+<li>&#x8FDB;&#x5165;iterator&#xFF0C;&#x8C03;&#x7528;&#x4F20;&#x5165;&#x7684;&#x5B88;&#x536B;hook&#xFF0C;&#x5E76;&#x5C06;&#x8DEF;&#x7531;&#x548C;&#x6267;&#x884C;next&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F20;&#x5165;</li>
+<li>&#x5B88;&#x536B;hook&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x6267;&#x884C;&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x8C03;&#x7528;next,&#x5219;&#x56DE;&#x5230;&#x7B2C;&#x4E8C;&#x6B65;&#x91CC;&#x9762;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</li>
+<li>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x8C03;&#x7528;&#x6B65;&#x9AA4;1&#x91CC;&#x9762;&#x4F20;&#x5165;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x89E6;&#x53D1;&#x4E0B;&#x6807;+1</li>
+<li>&#x53D6;&#x51FA;&#x7B2C;2&#x4E2A;&#x5B88;&#x536B;hook&#xFF0C;&#x5468;&#x800C;&#x590D;&#x59CB;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;hook&#x90FD;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x5219;&#x6267;&#x884C;cb</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: VueRouter核心源码解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"VueRouter导航守卫","level":"2.2.2","depth":2,"next":{"title":"微前端","level":"2.3","depth":1,"ref":"","articles":[{"title":"微前端源码解析之single-spa篇","level":"2.3.1","depth":2,"path":"microfrontend/1.md","ref":"microfrontend/1.md","articles":[]},{"title":"微前端源码解析之qiankun篇","level":"2.3.2","depth":2,"path":"microfrontend/2.md","ref":"microfrontend/2.md","articles":[]}]},"previous":{"title":"VueRouter核心源码解析","level":"2.2.1","depth":2,"path":"vue-router/1.md","ref":"vue-router/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue-router/2.md","mtime":"2021-01-29T10:10:13.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T10:12:54.568Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
